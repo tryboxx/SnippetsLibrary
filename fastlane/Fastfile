@@ -58,7 +58,7 @@ platform :mac do
 
     gym(
       configuration: "Release",
-      workspace: "SnippetsLibrary.xcodeproj",
+      workspace: "SnippetsLibrary.xcodeproj/project.xcworkspace",
       scheme: "Release",
       export_method: "app-store",
       export_options: {
