@@ -34,7 +34,6 @@
 		B82561F726E8C9840040A67E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561F626E8C9840040A67E /* SearchBar.swift */; };
 		B82561FB26E8CA040040A67E /* SnippetFileCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561FA26E8C9FF0040A67E /* SnippetFileCardViewModel.swift */; };
 		B82561FC26E8CA040040A67E /* SnippetFileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561F926E8C9FF0040A67E /* SnippetFileCardView.swift */; };
-		B825620026E8CB8C0040A67E /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561FF26E8CB8C0040A67E /* TextView.swift */; };
 		B825620226E8D14A0040A67E /* NSTableView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825620126E8D14A0040A67E /* NSTableView+BackgroundColor.swift */; };
 		B825621326E968380040A67E /* SnippetDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825621226E968380040A67E /* SnippetDetailsView.swift */; };
 		B84BFEA626F56A6A007E5109 /* CrashlyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEA526F56A6A007E5109 /* CrashlyticsService.swift */; };
@@ -59,6 +58,7 @@
 		B8B6DE7E26EE4BB500E49C57 /* SnippetsParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6DE7D26EE4BB500E49C57 /* SnippetsParserService.swift */; };
 		B8B6DE8126EE546800E49C57 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6DE8026EE546800E49C57 /* DependencyContainer.swift */; };
 		B8B6DE8326EE608500E49C57 /* SnippetPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6DE8226EE608500E49C57 /* SnippetPlist.swift */; };
+		B8C8755826FCF16E00DE4474 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B88D4A3526F4E34900164BF5 /* GoogleService-Info.plist */; };
 		B8EB5AD526F005CC00BE3EF6 /* CustomCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB5AD426F005CC00BE3EF6 /* CustomCodeTheme.swift */; };
 		B8EB5AD926F0061A00BE3EF6 /* SnippetFileCardViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB5AD826F0061A00BE3EF6 /* SnippetFileCardViewState.swift */; };
 		B8EB5ADB26F0076C00BE3EF6 /* PlistCodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB5ADA26F0076C00BE3EF6 /* PlistCodingKeys.swift */; };
@@ -121,7 +121,6 @@
 		B82561F626E8C9840040A67E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		B82561F926E8C9FF0040A67E /* SnippetFileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetFileCardView.swift; sourceTree = "<group>"; };
 		B82561FA26E8C9FF0040A67E /* SnippetFileCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetFileCardViewModel.swift; sourceTree = "<group>"; };
-		B82561FF26E8CB8C0040A67E /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		B825620126E8D14A0040A67E /* NSTableView+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		B825621226E968380040A67E /* SnippetDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetDetailsView.swift; sourceTree = "<group>"; };
 		B84BFEA526F56A6A007E5109 /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
@@ -303,7 +302,6 @@
 				B82561D826E8223B0040A67E /* VisualEffectView.swift */,
 				B82561DD26E822A80040A67E /* RecentSnippetCardView.swift */,
 				B82561F626E8C9840040A67E /* SearchBar.swift */,
-				B82561FF26E8CB8C0040A67E /* TextView.swift */,
 				B8F95B0626EEAEB200335D77 /* SnippetDropCellView.swift */,
 			);
 			path = Views;
@@ -613,6 +611,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C8755826FCF16E00DE4474 /* GoogleService-Info.plist in Resources */,
 				B82561BB26E81D580040A67E /* Preview Assets.xcassets in Resources */,
 				B82561B826E81D580040A67E /* Assets.xcassets in Resources */,
 			);
@@ -710,7 +709,6 @@
 				B8B6DE8126EE546800E49C57 /* DependencyContainer.swift in Sources */,
 				B8EB5AE826F00B4300BE3EF6 /* SnippetsParserServiceError.swift in Sources */,
 				B8EB5AE426F00A7000BE3EF6 /* SnippetPlatform.swift in Sources */,
-				B825620026E8CB8C0040A67E /* TextView.swift in Sources */,
 				B8B6DE7E26EE4BB500E49C57 /* SnippetsParserService.swift in Sources */,
 				B82561B426E81D570040A67E /* SnippetsLibraryApp.swift in Sources */,
 				B88BB45626F55DDB00747631 /* LogsService.swift in Sources */,
