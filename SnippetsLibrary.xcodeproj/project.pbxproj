@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B8162F2226FB76F900FB0A9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B88D4A3526F4E34900164BF5 /* GoogleService-Info.plist */; };
 		B8190DF826FA388500E3994C /* SnippetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8190DF726FA388500E3994C /* SnippetType.swift */; };
 		B82561B426E81D570040A67E /* SnippetsLibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561B326E81D570040A67E /* SnippetsLibraryApp.swift */; };
 		B82561B826E81D580040A67E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82561B726E81D580040A67E /* Assets.xcassets */; };
@@ -895,7 +894,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetsLibrary/Preview Content\"";
 				DEVELOPMENT_TEAM = 7WLUFJRJ56;
@@ -924,7 +923,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetsLibrary/Preview Content\"";
 				DEVELOPMENT_TEAM = 7WLUFJRJ56;
