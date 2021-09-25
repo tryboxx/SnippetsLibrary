@@ -21,6 +21,8 @@ struct SnippetFileCardView: View {
     
     // MARK: - Stored Properties
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @ObservedObject private(set) var viewModel: SnippetFileCardViewModel
     
     // MARK: - Views
@@ -35,10 +37,10 @@ struct SnippetFileCardView: View {
                     text: .constant(viewModel.snippet.content),
                     customization: SourceCodeTextEditor.Customization(
                         didChangeText: { _ in },
-                        insertionPointColor: { .white },
+                        insertionPointColor: { colorScheme == .dark ? .white : .black },
                         lexerForSource: { _ in SwiftLexer() },
                         textViewDidBeginEditing: { _ in },
-                        theme: { CustomCodeTheme() }
+                        theme: { CustomCodeTheme(colorScheme: colorScheme) }
                     ),
                     shouldBecomeFirstResponder: false
                 )

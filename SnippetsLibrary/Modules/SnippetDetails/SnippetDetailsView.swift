@@ -22,6 +22,7 @@ struct SnippetDetailsView: View {
     
     // MARK: - Stored Properties
     
+    @Environment(\.colorScheme) var colorScheme
     @Environment (\.presentationMode) var presentationMode
     
     @ObservedObject private(set) var viewModel: SnippetDetailsViewModel
@@ -52,10 +53,10 @@ struct SnippetDetailsView: View {
                     text: $viewModel.snippet.content,
                     customization: SourceCodeTextEditor.Customization(
                         didChangeText: { _ in },
-                        insertionPointColor: { .white },
+                        insertionPointColor: { colorScheme == .dark ? .white : .black },
                         lexerForSource: { _ in SwiftLexer() },
                         textViewDidBeginEditing: { _ in },
-                        theme: { CustomCodeTheme() }
+                        theme: { CustomCodeTheme(colorScheme: colorScheme) }
                     ),
                     shouldBecomeFirstResponder: false
                 )
