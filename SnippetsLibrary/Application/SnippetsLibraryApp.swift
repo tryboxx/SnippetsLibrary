@@ -10,10 +10,6 @@ import SwiftUI
 @main
 struct SnippetsLibraryApp: App {
     
-    private enum Constants {
-        static let userGuidesUrlString = "https://github.com/tryboxx/SnippetsLibrary/blob/main/README.md"
-    }
-    
     // MARK: - Stored Properties
     
     @Environment(\.scenePhase) var scenePhase
@@ -23,6 +19,7 @@ struct SnippetsLibraryApp: App {
     
     @State private var activeAppView: ActiveAppView? = nil
     @State private var activeAppSheet: AppSheet? = nil
+    @State private var shouldBeDisabled = false
     
     // MARK: - Views
     
@@ -31,6 +28,9 @@ struct SnippetsLibraryApp: App {
             showActiveAppView()
         }
         .windowStyle(HiddenTitleBarWindowStyle())
+        .onChange(of: activeAppView) {
+            shouldBeDisabled = ($0 == .snippetsLibrary(nil))
+        }
         .commands {
             CommandGroup(replacing: .newItem) {
                 Button("Add New Code Snippet...") {
@@ -48,7 +48,10 @@ struct SnippetsLibraryApp: App {
                     activeAppView = .importSnippet
                 }
                 
-                Button("Open Snippets Library...") {
+                DisabledCommandGroupButton(
+                    text: "Open Snippets Library...",
+                    shouldBeDisabled: $shouldBeDisabled
+                ) {
                     activeAppView = .snippetsLibrary(nil)
                 }
             }
@@ -59,10 +62,17 @@ struct SnippetsLibraryApp: App {
                 }
                 
                 Button("Show User Guides") {
-                    guard let url = URL(string: Constants.userGuidesUrlString) else { return }
-                    
-                    openURL(url)
+                    openURL(url: DIContainer.urlFactory.getURL(withType: .userGuides))
                 }
+            }
+            
+            CommandGroup(replacing: .windowList) {
+                Button("Developer Documentation") {
+                    openURL(url: DIContainer.urlFactory.getURL(withType: .docs))
+                }
+                .keyboardShortcut(
+                    "0",
+                    modifiers: [.command, .shift])
             }
         }
     }
@@ -112,6 +122,11 @@ struct SnippetsLibraryApp: App {
         service?.recipients = ["support@swiftdevtools.com"]
         service?.subject = "Snippets Library Issue"
         service?.perform(withItems: ["Please describe your problem here..."])
+    }
+    
+    private func openURL(url: URL?) {
+        guard let safeURL = url else { return }
+        openURL(safeURL)
     }
     
 }
