@@ -14,6 +14,7 @@ final class DependencyContainer {
     // MARK: - Services
     
     lazy var snippetsParserService: SnippetsParserService = SnippetsParserServiceImpl()
+    lazy var urlFactory: URLFactory = URLFactoryImpl()
     
     lazy var databaseService: DatabaseService = DatabaseServiceImpl(
         logsService: logsService,

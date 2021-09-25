@@ -12,7 +12,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         FirebaseApp.configure()
-        DIContainer.crashlyticsService.logNonFatalError(.unableToCreateSnippet)
         return
     }
     
