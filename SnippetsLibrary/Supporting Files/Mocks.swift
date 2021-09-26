@@ -32,3 +32,12 @@ let mockedSnippets = [
         availability: .topLevel
     )
 ]
+
+let skeletonSnippets = [
+    Snippet(mockedForSkeleton: true),
+    Snippet(mockedForSkeleton: true),
+    Snippet(mockedForSkeleton: true),
+    Snippet(mockedForSkeleton: true),
+    Snippet(mockedForSkeleton: true),
+    Snippet(mockedForSkeleton: true)
+]

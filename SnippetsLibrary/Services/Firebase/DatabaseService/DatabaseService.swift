@@ -60,8 +60,13 @@ final class DatabaseServiceImpl: DatabaseService {
     
     internal func fetchSnippets() -> AnyPublisher<[Snippet], DatabaseError> {
         return Future<[Snippet], DatabaseError> { [weak self] promise in
-            self?.ref.child("snippets").observe(.value) {
-                guard let results = $0.value as? NSDictionary else {
+            _ = self?.ref.child("snippets").observe(.value, timeout: 5) {
+                guard let snapshot = $0 else {
+                    promise(.failure(.unableToFetchData))
+                    return
+                }
+                
+                guard let results = snapshot.value as? NSDictionary else {
                     promise(.failure(.unableToFetchData))
                     return
                 }

@@ -11,7 +11,6 @@
 		B82561B426E81D570040A67E /* SnippetsLibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561B326E81D570040A67E /* SnippetsLibraryApp.swift */; };
 		B82561B826E81D580040A67E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82561B726E81D580040A67E /* Assets.xcassets */; };
 		B82561BB26E81D580040A67E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82561BA26E81D580040A67E /* Preview Assets.xcassets */; };
-		B82561C526E81F580040A67E /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = B82561C426E81F580040A67E /* Sourceful */; };
 		B82561C926E820D50040A67E /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561C826E820D50040A67E /* StartView.swift */; };
 		B82561CB26E820EE0040A67E /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561CA26E820EE0040A67E /* StartViewModel.swift */; };
 		B82561CE26E821350040A67E /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561CD26E821350040A67E /* Snippet.swift */; };
@@ -36,13 +35,17 @@
 		B82561FC26E8CA040040A67E /* SnippetFileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561F926E8C9FF0040A67E /* SnippetFileCardView.swift */; };
 		B825620226E8D14A0040A67E /* NSTableView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825620126E8D14A0040A67E /* NSTableView+BackgroundColor.swift */; };
 		B825621326E968380040A67E /* SnippetDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825621226E968380040A67E /* SnippetDetailsView.swift */; };
+		B82B557426FFFB9900DE4766 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = B82B557326FFFB9900DE4766 /* Sourceful */; };
+		B82B557726FFFC7E00DE4766 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B82B557626FFFC7E00DE4766 /* FirebaseCrashlytics */; };
+		B82B557926FFFC7E00DE4766 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B82B557826FFFC7E00DE4766 /* FirebaseDatabase */; };
+		B82B557B26FFFC7E00DE4766 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = B82B557A26FFFC7E00DE4766 /* FirebaseRemoteConfig */; };
+		B82B557E26FFFCD500DE4766 /* SwiftUISkeleton in Frameworks */ = {isa = PBXBuildFile; productRef = B82B557D26FFFCD500DE4766 /* SwiftUISkeleton */; };
+		B82B55802700011000DE4766 /* SnippetsLibraryView+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B557F2700011000DE4766 /* SnippetsLibraryView+Equatable.swift */; };
+		B82B55822700014600DE4766 /* StartView+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B55812700014600DE4766 /* StartView+Equatable.swift */; };
+		B82B5586270007C500DE4766 /* DatabaseReference+Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B5585270007C500DE4766 /* DatabaseReference+Timeout.swift */; };
 		B84BFEA626F56A6A007E5109 /* CrashlyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEA526F56A6A007E5109 /* CrashlyticsService.swift */; };
 		B84BFEA926F57018007E5109 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEA826F57018007E5109 /* System.swift */; };
 		B84BFEAB26F570CE007E5109 /* CrashlyticsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEAA26F570CE007E5109 /* CrashlyticsError.swift */; };
-		B84BFEAE26F57171007E5109 /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = B84BFEAD26F57171007E5109 /* FirebasePerformance */; };
-		B84BFEB026F57171007E5109 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B84BFEAF26F57171007E5109 /* FirebaseCrashlytics */; };
-		B84BFEB226F57171007E5109 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = B84BFEB126F57171007E5109 /* FirebaseRemoteConfig */; };
-		B84BFEB426F57171007E5109 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B84BFEB326F57171007E5109 /* FirebaseDatabase */; };
 		B856D65526F2A29600F60D09 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B856D65426F2A29600F60D09 /* DatabaseService.swift */; };
 		B85D1A9D26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1A9C26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift */; };
 		B88BB45626F55DDB00747631 /* LogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88D4A3926F55BEE00164BF5 /* LogsService.swift */; };
@@ -58,10 +61,17 @@
 		B8B6DE7E26EE4BB500E49C57 /* SnippetsParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6DE7D26EE4BB500E49C57 /* SnippetsParserService.swift */; };
 		B8B6DE8126EE546800E49C57 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6DE8026EE546800E49C57 /* DependencyContainer.swift */; };
 		B8B6DE8326EE608500E49C57 /* SnippetPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6DE8226EE608500E49C57 /* SnippetPlist.swift */; };
+		B8BEF5A926FFBF7E0098A778 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF5A826FFBF7E0098A778 /* ToastView.swift */; };
+		B8BEF5AB26FFC8AC0098A778 /* View+Displayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF5AA26FFC8AC0098A778 /* View+Displayed.swift */; };
+		B8BEF5AD26FFEB600098A778 /* EmptySnippetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF5AC26FFEB600098A778 /* EmptySnippetsListView.swift */; };
+		B8C549BA26FF9C0800720E62 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549B926FF9C0800720E62 /* NetworkObserver.swift */; };
+		B8C549BC26FFA71300720E62 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549BB26FFA71300720E62 /* AppView.swift */; };
+		B8C549C426FFBA8600720E62 /* View+Skeletonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549C326FFBA8600720E62 /* View+Skeletonable.swift */; };
 		B8C8755926FD2AB600DE4474 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B88D4A3526F4E34900164BF5 /* GoogleService-Info.plist */; };
 		B8CE1CAB26FD4193004AD5D5 /* DisabledCommandGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE1CAA26FD4193004AD5D5 /* DisabledCommandGroupButton.swift */; };
 		B8CE1CAE26FD431E004AD5D5 /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE1CAD26FD431E004AD5D5 /* URLFactory.swift */; };
 		B8CE1CB026FD43B5004AD5D5 /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE1CAF26FD43B5004AD5D5 /* URLType.swift */; };
+		B8CE1CB826FF965D004AD5D5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE1CB726FF965D004AD5D5 /* NetworkService.swift */; };
 		B8EB5AD526F005CC00BE3EF6 /* CustomCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB5AD426F005CC00BE3EF6 /* CustomCodeTheme.swift */; };
 		B8EB5AD926F0061A00BE3EF6 /* SnippetFileCardViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB5AD826F0061A00BE3EF6 /* SnippetFileCardViewState.swift */; };
 		B8EB5ADB26F0076C00BE3EF6 /* PlistCodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB5ADA26F0076C00BE3EF6 /* PlistCodingKeys.swift */; };
@@ -126,6 +136,9 @@
 		B82561FA26E8C9FF0040A67E /* SnippetFileCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetFileCardViewModel.swift; sourceTree = "<group>"; };
 		B825620126E8D14A0040A67E /* NSTableView+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		B825621226E968380040A67E /* SnippetDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetDetailsView.swift; sourceTree = "<group>"; };
+		B82B557F2700011000DE4766 /* SnippetsLibraryView+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnippetsLibraryView+Equatable.swift"; sourceTree = "<group>"; };
+		B82B55812700014600DE4766 /* StartView+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartView+Equatable.swift"; sourceTree = "<group>"; };
+		B82B5585270007C500DE4766 /* DatabaseReference+Timeout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Timeout.swift"; sourceTree = "<group>"; };
 		B84BFEA526F56A6A007E5109 /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
 		B84BFEA826F57018007E5109 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		B84BFEAA26F570CE007E5109 /* CrashlyticsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsError.swift; sourceTree = "<group>"; };
@@ -149,9 +162,16 @@
 		B8B6DE7D26EE4BB500E49C57 /* SnippetsParserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsParserService.swift; sourceTree = "<group>"; };
 		B8B6DE8026EE546800E49C57 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		B8B6DE8226EE608500E49C57 /* SnippetPlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetPlist.swift; sourceTree = "<group>"; };
+		B8BEF5A826FFBF7E0098A778 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		B8BEF5AA26FFC8AC0098A778 /* View+Displayed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Displayed.swift"; sourceTree = "<group>"; };
+		B8BEF5AC26FFEB600098A778 /* EmptySnippetsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySnippetsListView.swift; sourceTree = "<group>"; };
+		B8C549B926FF9C0800720E62 /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
+		B8C549BB26FFA71300720E62 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		B8C549C326FFBA8600720E62 /* View+Skeletonable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Skeletonable.swift"; sourceTree = "<group>"; };
 		B8CE1CAA26FD4193004AD5D5 /* DisabledCommandGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledCommandGroupButton.swift; sourceTree = "<group>"; };
 		B8CE1CAD26FD431E004AD5D5 /* URLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
 		B8CE1CAF26FD43B5004AD5D5 /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
+		B8CE1CB726FF965D004AD5D5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B8EB5AD426F005CC00BE3EF6 /* CustomCodeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCodeTheme.swift; sourceTree = "<group>"; };
 		B8EB5AD826F0061A00BE3EF6 /* SnippetFileCardViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetFileCardViewState.swift; sourceTree = "<group>"; };
 		B8EB5ADA26F0076C00BE3EF6 /* PlistCodingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistCodingKeys.swift; sourceTree = "<group>"; };
@@ -172,11 +192,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B84BFEB426F57171007E5109 /* FirebaseDatabase in Frameworks */,
-				B84BFEB026F57171007E5109 /* FirebaseCrashlytics in Frameworks */,
-				B84BFEAE26F57171007E5109 /* FirebasePerformance in Frameworks */,
-				B82561C526E81F580040A67E /* Sourceful in Frameworks */,
-				B84BFEB226F57171007E5109 /* FirebaseRemoteConfig in Frameworks */,
+				B82B557926FFFC7E00DE4766 /* FirebaseDatabase in Frameworks */,
+				B82B557426FFFB9900DE4766 /* Sourceful in Frameworks */,
+				B82B557726FFFC7E00DE4766 /* FirebaseCrashlytics in Frameworks */,
+				B82B557E26FFFCD500DE4766 /* SwiftUISkeleton in Frameworks */,
+				B82B557B26FFFC7E00DE4766 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +281,8 @@
 			children = (
 				B82561C826E820D50040A67E /* StartView.swift */,
 				B82561CA26E820EE0040A67E /* StartViewModel.swift */,
-				B82561D526E821F20040A67E /* StartViewRecentSnippetsView.swift */,
-				B82561DF26E824790040A67E /* StartViewMenuItem.swift */,
+				B82B5584270001B000DE4766 /* StartViewMenuItem */,
+				B82B5583270001A100DE4766 /* StartViewRecentSnippets */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -296,6 +316,7 @@
 				B8B6DE7826ED8F5500E49C57 /* TextFieldStyleModifier.swift */,
 				B8EB5AD426F005CC00BE3EF6 /* CustomCodeTheme.swift */,
 				B84BFEA826F57018007E5109 /* System.swift */,
+				B8C549B926FF9C0800720E62 /* NetworkObserver.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -310,6 +331,9 @@
 				B82561F626E8C9840040A67E /* SearchBar.swift */,
 				B8F95B0626EEAEB200335D77 /* SnippetDropCellView.swift */,
 				B8CE1CAA26FD4193004AD5D5 /* DisabledCommandGroupButton.swift */,
+				B8C549BB26FFA71300720E62 /* AppView.swift */,
+				B8BEF5A826FFBF7E0098A778 /* ToastView.swift */,
+				B8BEF5AC26FFEB600098A778 /* EmptySnippetsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,6 +346,11 @@
 				B825620126E8D14A0040A67E /* NSTableView+BackgroundColor.swift */,
 				B8F95AFE26EE74DE00335D77 /* AnyPublisher+SinkWithoutValue.swift */,
 				B88D7A6226F7A5C000B114F6 /* SnippetPlist+Dictonary.swift */,
+				B8C549C326FFBA8600720E62 /* View+Skeletonable.swift */,
+				B8BEF5AA26FFC8AC0098A778 /* View+Displayed.swift */,
+				B82B557F2700011000DE4766 /* SnippetsLibraryView+Equatable.swift */,
+				B82B55812700014600DE4766 /* StartView+Equatable.swift */,
+				B82B5585270007C500DE4766 /* DatabaseReference+Timeout.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -353,6 +382,22 @@
 				B8B6DE7A26ED9A3300E49C57 /* SnippetDetailsViewModel.swift */,
 			);
 			path = SnippetDetails;
+			sourceTree = "<group>";
+		};
+		B82B5583270001A100DE4766 /* StartViewRecentSnippets */ = {
+			isa = PBXGroup;
+			children = (
+				B82561D526E821F20040A67E /* StartViewRecentSnippetsView.swift */,
+			);
+			path = StartViewRecentSnippets;
+			sourceTree = "<group>";
+		};
+		B82B5584270001B000DE4766 /* StartViewMenuItem */ = {
+			isa = PBXGroup;
+			children = (
+				B82561DF26E824790040A67E /* StartViewMenuItem.swift */,
+			);
+			path = StartViewMenuItem;
 			sourceTree = "<group>";
 		};
 		B84BFEA426F56A58007E5109 /* Crashlytics */ = {
@@ -428,6 +473,7 @@
 		B8B6DE7C26EE4B9400E49C57 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B8CE1CB626FF964F004AD5D5 /* Network */,
 				B8CE1CAC26FD430D004AD5D5 /* URLFactory */,
 				B88D7A5F26F797DE00B114F6 /* UserDefaults */,
 				B856D65226F2A27300F60D09 /* Firebase */,
@@ -450,6 +496,14 @@
 				B8CE1CAD26FD431E004AD5D5 /* URLFactory.swift */,
 			);
 			path = URLFactory;
+			sourceTree = "<group>";
+		};
+		B8CE1CB626FF964F004AD5D5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B8CE1CB726FF965D004AD5D5 /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		B8EB5AD726F0061000BE3EF6 /* Enums */ = {
@@ -531,11 +585,11 @@
 			);
 			name = SnippetsLibrary;
 			packageProductDependencies = (
-				B82561C426E81F580040A67E /* Sourceful */,
-				B84BFEAD26F57171007E5109 /* FirebasePerformance */,
-				B84BFEAF26F57171007E5109 /* FirebaseCrashlytics */,
-				B84BFEB126F57171007E5109 /* FirebaseRemoteConfig */,
-				B84BFEB326F57171007E5109 /* FirebaseDatabase */,
+				B82B557326FFFB9900DE4766 /* Sourceful */,
+				B82B557626FFFC7E00DE4766 /* FirebaseCrashlytics */,
+				B82B557826FFFC7E00DE4766 /* FirebaseDatabase */,
+				B82B557A26FFFC7E00DE4766 /* FirebaseRemoteConfig */,
+				B82B557D26FFFCD500DE4766 /* SwiftUISkeleton */,
 			);
 			productName = SnippetsLibrary;
 			productReference = B82561B026E81D570040A67E /* SnippetsLibrary.app */;
@@ -609,8 +663,9 @@
 			);
 			mainGroup = B82561A726E81D570040A67E;
 			packageReferences = (
-				B82561C326E81F580040A67E /* XCRemoteSwiftPackageReference "Sourceful" */,
-				B84BFEAC26F57171007E5109 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B82B557226FFFB9900DE4766 /* XCRemoteSwiftPackageReference "Sourceful" */,
+				B82B557526FFFC7E00DE4766 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B82B557C26FFFCD500DE4766 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */,
 			);
 			productRefGroup = B82561B126E81D570040A67E /* Products */;
 			projectDirPath = "";
@@ -687,8 +742,12 @@
 				B8EB5AE626F00B2100BE3EF6 /* StartViewMenuItemType.swift in Sources */,
 				B84BFEAB26F570CE007E5109 /* CrashlyticsError.swift in Sources */,
 				B825621326E968380040A67E /* SnippetDetailsView.swift in Sources */,
+				B8C549BC26FFA71300720E62 /* AppView.swift in Sources */,
 				B8EB5ADB26F0076C00BE3EF6 /* PlistCodingKeys.swift in Sources */,
+				B82B5586270007C500DE4766 /* DatabaseReference+Timeout.swift in Sources */,
+				B82B55822700014600DE4766 /* StartView+Equatable.swift in Sources */,
 				B88D7A6126F797F000B114F6 /* UserDefaultsService.swift in Sources */,
+				B82B55802700011000DE4766 /* SnippetsLibraryView+Equatable.swift in Sources */,
 				B82561EB26E8C7F00040A67E /* SnippetsLibraryViewModel.swift in Sources */,
 				B82561E226E824A20040A67E /* NSApplication+AppVersion.swift in Sources */,
 				B82561DE26E822A80040A67E /* RecentSnippetCardView.swift in Sources */,
@@ -696,9 +755,11 @@
 				B88BB45C26F564E600747631 /* DatabaseError.swift in Sources */,
 				B82561D926E8223B0040A67E /* VisualEffectView.swift in Sources */,
 				B82561ED26E8C89A0040A67E /* AppSheet.swift in Sources */,
+				B8BEF5AB26FFC8AC0098A778 /* View+Displayed.swift in Sources */,
 				B82561FB26E8CA040040A67E /* SnippetFileCardViewModel.swift in Sources */,
 				B8F95B0726EEAEB200335D77 /* SnippetDropCellView.swift in Sources */,
 				B82561F426E8C8C20040A67E /* SnippetListItemView.swift in Sources */,
+				B8C549BA26FF9C0800720E62 /* NetworkObserver.swift in Sources */,
 				B825620226E8D14A0040A67E /* NSTableView+BackgroundColor.swift in Sources */,
 				B82561CE26E821350040A67E /* Snippet.swift in Sources */,
 				B8F95B0526EEADE400335D77 /* SnippetImportView.swift in Sources */,
@@ -712,10 +773,13 @@
 				B82561E026E824790040A67E /* StartViewMenuItem.swift in Sources */,
 				B8B6DE8326EE608500E49C57 /* SnippetPlist.swift in Sources */,
 				B82561F726E8C9840040A67E /* SearchBar.swift in Sources */,
+				B8C549C426FFBA8600720E62 /* View+Skeletonable.swift in Sources */,
 				B82561E926E8C7D60040A67E /* SnippetsLibraryView.swift in Sources */,
 				B8EB5ADF26F00A4A00BE3EF6 /* SnippetDetailsViewType.swift in Sources */,
 				B84BFEA926F57018007E5109 /* System.swift in Sources */,
 				B8B6DE7B26ED9A3300E49C57 /* SnippetDetailsViewModel.swift in Sources */,
+				B8CE1CB826FF965D004AD5D5 /* NetworkService.swift in Sources */,
+				B8BEF5A926FFBF7E0098A778 /* ToastView.swift in Sources */,
 				B84BFEA626F56A6A007E5109 /* CrashlyticsService.swift in Sources */,
 				B8CE1CB026FD43B5004AD5D5 /* URLType.swift in Sources */,
 				B82561D626E821F20040A67E /* StartViewRecentSnippetsView.swift in Sources */,
@@ -724,6 +788,7 @@
 				B82561DC26E822840040A67E /* View+Visibility.swift in Sources */,
 				B856D65526F2A29600F60D09 /* DatabaseService.swift in Sources */,
 				B8EB5AD526F005CC00BE3EF6 /* CustomCodeTheme.swift in Sources */,
+				B8BEF5AD26FFEB600098A778 /* EmptySnippetsListView.swift in Sources */,
 				B8CE1CAE26FD431E004AD5D5 /* URLFactory.swift in Sources */,
 				B8B6DE8126EE546800E49C57 /* DependencyContainer.swift in Sources */,
 				B8EB5AE826F00B4300BE3EF6 /* SnippetsParserServiceError.swift in Sources */,
@@ -1066,7 +1131,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B82561C326E81F580040A67E /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+		B82B557226FFFB9900DE4766 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/Sourceful.git";
 			requirement = {
@@ -1074,41 +1139,49 @@
 				minimumVersion = 0.4.0;
 			};
 		};
-		B84BFEAC26F57171007E5109 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		B82B557526FFFC7E00DE4766 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.7.0;
+				minimumVersion = 7.0.0;
+			};
+		};
+		B82B557C26FFFCD500DE4766 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/serbats/SwiftUISkeleton.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B82561C426E81F580040A67E /* Sourceful */ = {
+		B82B557326FFFB9900DE4766 /* Sourceful */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B82561C326E81F580040A67E /* XCRemoteSwiftPackageReference "Sourceful" */;
+			package = B82B557226FFFB9900DE4766 /* XCRemoteSwiftPackageReference "Sourceful" */;
 			productName = Sourceful;
 		};
-		B84BFEAD26F57171007E5109 /* FirebasePerformance */ = {
+		B82B557626FFFC7E00DE4766 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B84BFEAC26F57171007E5109 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebasePerformance;
-		};
-		B84BFEAF26F57171007E5109 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B84BFEAC26F57171007E5109 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = B82B557526FFFC7E00DE4766 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		B84BFEB126F57171007E5109 /* FirebaseRemoteConfig */ = {
+		B82B557826FFFC7E00DE4766 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B84BFEAC26F57171007E5109 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = B82B557526FFFC7E00DE4766 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		B82B557A26FFFC7E00DE4766 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B82B557526FFFC7E00DE4766 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
 		};
-		B84BFEB326F57171007E5109 /* FirebaseDatabase */ = {
+		B82B557D26FFFCD500DE4766 /* SwiftUISkeleton */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B84BFEAC26F57171007E5109 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
+			package = B82B557C26FFFCD500DE4766 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */;
+			productName = SwiftUISkeleton;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
