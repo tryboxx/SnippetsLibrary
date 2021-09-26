@@ -11,8 +11,7 @@ import SwiftUI
 struct SnippetsLibraryApp: App {
     
     // MARK: - Stored Properties
-    
-    @Environment(\.scenePhase) var scenePhase
+
     @Environment(\.openURL) var openURL
     
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -25,7 +24,11 @@ struct SnippetsLibraryApp: App {
     
     var body: some Scene {
         WindowGroup {
-            showActiveAppView()
+            AppView(
+                activeAppView: $activeAppView,
+                activeAppSheet: $activeAppSheet,
+                shouldBeDisabled: $shouldBeDisabled
+            )
         }
         .windowStyle(HiddenTitleBarWindowStyle())
         .onChange(of: activeAppView) {
@@ -78,44 +81,6 @@ struct SnippetsLibraryApp: App {
     }
     
     // MARK: - Methods
-    
-    @ViewBuilder
-    private func showActiveAppView() -> some View {
-        switch activeAppView {
-        case .create:
-            SnippetsLibraryView(
-                viewModel: SnippetsLibraryViewModel(),
-                activeSheet: $activeAppSheet
-            )
-        case .importSnippet:
-            SnippetImportView(viewModel: SnippetImportViewModel(activeAppView: $activeAppView))
-        case let .snippetsLibrary(snippetId):
-            SnippetsLibraryView(
-                viewModel: SnippetsLibraryViewModel(activeSnippetId: snippetId),
-                activeSheet: $activeAppSheet
-            )
-        case .none:
-            StartView(
-                viewModel: StartViewModel(
-                    activeAppView: $activeAppView,
-                    activeAppSheet: $activeAppSheet
-                )
-            )
-            .onChange(of: scenePhase) {
-                guard $0 == .active else { return }
-                
-                updateSystemButtons(hidden: true)
-            }
-        }
-    }
-    
-    private func updateSystemButtons(hidden: Bool) {
-        for window in NSApplication.shared.windows {
-            window.standardWindowButton(.zoomButton)?.isHidden = hidden
-            window.standardWindowButton(.miniaturizeButton)?.isHidden = hidden
-            window.standardWindowButton(.closeButton)?.isHidden = hidden
-        }
-    }
     
     private func composeEmail() {
         let service = NSSharingService(named: NSSharingService.Name.composeEmail)

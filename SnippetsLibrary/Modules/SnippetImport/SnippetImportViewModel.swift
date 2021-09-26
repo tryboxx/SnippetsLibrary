@@ -15,6 +15,8 @@ final class SnippetImportViewModel: ObservableObject {
     @Published internal var snippet: Snippet?
     @Binding internal var activeAppView: ActiveAppView?
     
+    @Published internal var shouldShowErrorAlert = false
+    
     private let snippetsParserService: SnippetsParserService
     private let databaseService: DatabaseService
     private let crashlyticsService: CrashlyticsService
@@ -43,6 +45,7 @@ final class SnippetImportViewModel: ObservableObject {
                 switch completion {
                 case .finished: return
                 case .failure:
+                    self?.shouldShowErrorAlert.toggle()
                     self?.crashlyticsService.logNonFatalError(.unableToCreateSnippetFromDroppedFile)
                 }
             } receiveValue: { [weak self] in
@@ -57,8 +60,8 @@ final class SnippetImportViewModel: ObservableObject {
                 switch completion {
                 case .finished:
                     self?.activeAppView = .snippetsLibrary(snippet.id)
-                case let .failure(error):
-                    debugPrint("Error: \(error.localizedDescription)")
+                case .failure:
+                    self?.shouldShowErrorAlert.toggle()
                 }
             }
             .store(in: &cancellables)

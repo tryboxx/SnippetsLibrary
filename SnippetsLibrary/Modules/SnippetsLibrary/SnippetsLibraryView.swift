@@ -28,7 +28,6 @@ struct SnippetsLibraryView: View {
             } onRemove: {
                 viewModel.onRemove($0)
             }
-
             
             SnippetsLibraryPreviewView(
                 snippets: $viewModel.snippets,
@@ -59,6 +58,13 @@ struct SnippetsLibraryView: View {
                 )
             }
         }
+        .makeDisplayed(
+            with: $viewModel.shouldShowErrorAlert,
+            imageName: "network",
+            title: "Network error",
+            subtitle: "Requested operation couldn't be completed",
+            state: .failure
+        )
     }
 
 }

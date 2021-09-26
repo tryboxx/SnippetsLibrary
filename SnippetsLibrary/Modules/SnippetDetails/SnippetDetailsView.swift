@@ -210,6 +210,13 @@ struct SnippetDetailsView: View {
         .onChange(of: viewModel.shouldDismissView) { _ in
             presentationMode.wrappedValue.dismiss()
         }
+        .makeDisplayed(
+            with: $viewModel.shouldShowErrorAlert,
+            imageName: "network",
+            title: "Network error",
+            subtitle: "Requested operation couldn't be completed",
+            state: .failure
+        )
     }
     
 }

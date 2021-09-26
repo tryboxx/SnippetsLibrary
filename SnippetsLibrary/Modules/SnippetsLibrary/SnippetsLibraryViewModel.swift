@@ -12,8 +12,9 @@ final class SnippetsLibraryViewModel: ObservableObject {
     
     // MARK: - Stored Properties
 
-    @Published internal var snippets: [Snippet] = []
+    @Published internal var snippets: [Snippet] = skeletonSnippets
     @Published internal var selectedSnippetId: SnippetId?
+    @Published internal var shouldShowErrorAlert = false
     
     private let activeSnippetId: SnippetId?
     
@@ -42,7 +43,10 @@ final class SnippetsLibraryViewModel: ObservableObject {
         guard
             let snippetId = snippetId,
             let snippet = snippets.first(where: { $0.id == snippetId })
-        else { return }
+        else {
+            shouldShowErrorAlert.toggle()
+            return
+        }
         
         removeSnippet(snippet)
     }
@@ -50,11 +54,12 @@ final class SnippetsLibraryViewModel: ObservableObject {
     internal func fetchSnippets() {
         databaseService.fetchSnippets()
             .receive(on: DispatchQueue.main)
-            .sink { completion in
+            .sink { [weak self] completion in
                 switch completion {
                 case .finished: return
-                case let .failure(error):
-                    debugPrint("Error: \(error.localizedDescription)")
+                case .failure:
+                    self?.shouldShowErrorAlert.toggle()
+                    self?.snippets = []
                 }
             } receiveValue: { [weak self] in
                 self?.snippets = $0
@@ -73,12 +78,12 @@ final class SnippetsLibraryViewModel: ObservableObject {
     
     private func removeSnippet(_ snippet: Snippet) {
         databaseService.removeSnippet(snippet)
-            .sink { [weak self ]completion in
+            .sink { [weak self] completion in
                 switch completion {
                 case .finished:
                     self?.snippets.removeAll { $0.id == snippet.id }
-                case let .failure(error):
-                    debugPrint("Error: \(error.localizedDescription)")
+                case .failure:
+                    self?.shouldShowErrorAlert.toggle()
                 }
             }
             .store(in: &cancellables)

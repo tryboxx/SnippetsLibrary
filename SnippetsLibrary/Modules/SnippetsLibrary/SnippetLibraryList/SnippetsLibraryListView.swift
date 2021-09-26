@@ -33,6 +33,10 @@ struct SnippetsLibraryListView: View {
         ]
     }
     
+    private var hasAnyResults: Bool {
+        (snippetGroups.first?.isEmpty == true) && (snippetGroups.last?.isEmpty == true)
+    }
+    
     // MARK: - Views
     
     var body: some View {
@@ -47,9 +51,10 @@ struct SnippetsLibraryListView: View {
                 } label: {
                     Image(systemName: "arrow.down.circle")
                         .font(.system(size: 15, weight: .light))
-                        .foregroundColor(Color.white.opacity(Layout.mediumOpacity))
+                        .foregroundColor(Color.primary.opacity(Layout.mediumOpacity))
                 }
                 .buttonStyle(PlainButtonStyle())
+                .help("Pull all changes from remote.")
             }
             .padding(.top, Layout.largePadding)
             .padding(.horizontal)
@@ -69,6 +74,9 @@ struct SnippetsLibraryListView: View {
                     )
                 }
             }
+            .overlay(
+                EmptySnippetsListView(isListEmpty: .constant(snippets.isEmpty || hasAnyResults ))
+            )
         }
         .frame(minWidth: Constants.minWidth)
         .background(
