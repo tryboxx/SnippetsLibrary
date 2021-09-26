@@ -13,6 +13,7 @@ struct DisabledCommandGroupButton: View {
     
     let text: String
     @Binding private(set) var shouldBeDisabled: Bool
+    let type: DisabledCommandGroupButtonType
     let onTap: () -> Void
     
     // MARK: - Views
@@ -22,13 +23,13 @@ struct DisabledCommandGroupButton: View {
             text,
             action: onTap
         )
-        .disabled(shouldBeDisabled)
+        .disabled(type == .openLibrary ? shouldBeDisabled : !shouldBeDisabled)
     }
     
 }
 
 struct DisabledCommandGroupButton_Previews: PreviewProvider {
     static var previews: some View {
-        DisabledCommandGroupButton(text: "", shouldBeDisabled: .constant(false)) {}
+        DisabledCommandGroupButton(text: "", shouldBeDisabled: .constant(false), type: .openLibrary) {}
     }
 }

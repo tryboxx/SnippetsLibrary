@@ -53,10 +53,25 @@ struct SnippetsLibraryApp: App {
                 
                 DisabledCommandGroupButton(
                     text: "Open Snippets Library...",
-                    shouldBeDisabled: $shouldBeDisabled
+                    shouldBeDisabled: $shouldBeDisabled,
+                    type: .openLibrary
                 ) {
                     activeAppView = .snippetsLibrary(nil)
                 }
+                
+                Divider()
+                
+                DisabledCommandGroupButton(
+                    text: "Upload All Snippets To Xcode...",
+                    shouldBeDisabled: $shouldBeDisabled,
+                    type: .uploadSnippets
+                ) {
+                    activeAppSheet = .snippetsUpload
+                }
+                .keyboardShortcut(
+                    "u",
+                    modifiers: [.command, .control, .option]
+                )
             }
             
             CommandGroup(replacing: .help) {
