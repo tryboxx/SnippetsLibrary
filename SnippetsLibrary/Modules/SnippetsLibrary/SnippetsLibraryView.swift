@@ -56,6 +56,8 @@ struct SnippetsLibraryView: View {
                         activeAppView: .constant(nil)
                     )
                 )
+            case .snippetsUpload:
+                SnippetsUploadView(viewModel: SnippetsUploadViewModel(snippets: viewModel.snippets))
             }
         }
         .makeDisplayed(
