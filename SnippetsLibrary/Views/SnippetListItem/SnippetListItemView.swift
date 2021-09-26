@@ -12,12 +12,20 @@ struct SnippetListItemView: View {
     private enum Constants {
         static let imageHeight: CGFloat = 38.0
         static let lineLimit = 1
-        static let spacing = Layout.smallPadding / 4
+        static let spacing = Layout.smallPadding / 2
+        static let smallSpacing = Layout.smallPadding / 4
+        static let cornerRadius: CGFloat = 8.0
     }
     
     // MARK: - Stored Properties
     
     let snippet: Snippet
+    
+    // MARK: - Computed Properties
+    
+    private var shouldAnimate: Bool {
+        snippet.content.isEmpty
+    }
     
     // MARK: - Views
 
@@ -27,15 +35,17 @@ struct SnippetListItemView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: Constants.imageHeight)
+                .makeSkeletonable(animating: shouldAnimate)
             
             VStack(
                 alignment: .leading,
-                spacing: Constants.spacing
+                spacing: Constants.smallSpacing
             ) {
                 Text("\(snippet.title)")
                     .font(.system(size: 13))
                     .foregroundColor(Color.primary)
                     .lineLimit(Constants.lineLimit)
+                    .makeSkeletonable(animating: shouldAnimate)
                 
                 Text(snippet.summary)
                     .font(.system(size: 11))
@@ -44,11 +54,31 @@ struct SnippetListItemView: View {
                             .opacity(Layout.mediumOpacity)
                     )
                     .lineLimit(Constants.lineLimit)
+                    .makeSkeletonable(animating: shouldAnimate)
             }
             .padding(.leading, Layout.smallPadding)
             
             Spacer()
         }
+        .padding(
+            .horizontal,
+            shouldAnimate ? Constants.spacing : .zero
+        )
+        .padding(
+            .vertical,
+            shouldAnimate ? Constants.smallSpacing : .zero
+        )
+        .background(
+            RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                .makeSkeletonable(
+                    animating: shouldAnimate,
+                    isBottomView: true
+                )
+                .makeVisible(
+                    shouldAnimate,
+                    removed: true
+                )
+        )
     }
     
 }

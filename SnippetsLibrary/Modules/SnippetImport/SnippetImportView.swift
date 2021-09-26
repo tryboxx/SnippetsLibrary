@@ -54,6 +54,13 @@ struct SnippetImportView: View {
                 delegate: viewModel.self
             )
         }
+        .makeDisplayed(
+            with: $viewModel.shouldShowErrorAlert,
+            imageName: "network",
+            title: "Network error",
+            subtitle: "Unable to import the snippet",
+            state: .failure
+        )
     }
     
 }

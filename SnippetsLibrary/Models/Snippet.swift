@@ -43,6 +43,17 @@ struct Snippet: Codable, Identifiable, Hashable {
         availability = .allScopes
     }
     
+    init(mockedForSkeleton: Bool) {
+        id = UUID().uuidString
+        title = "Default snippet title"
+        summary = "Default snippet summary"
+        content = ""
+        author = ""
+        completion = ""
+        platform = .all
+        availability = .allScopes
+    }
+    
     init(
         id: SnippetId,
         title: String,

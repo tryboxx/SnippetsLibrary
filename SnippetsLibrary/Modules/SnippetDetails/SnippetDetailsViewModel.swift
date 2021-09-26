@@ -25,6 +25,7 @@ final class SnippetDetailsViewModel: ObservableObject {
     internal var availabilities = SnippetAvailability.allCases
     
     @Published private(set) var shouldDismissView = false
+    @Published internal var shouldShowErrorAlert = false
     
     private let snippetsParserService: SnippetsParserService
     private let databaseService: DatabaseService
@@ -69,11 +70,11 @@ final class SnippetDetailsViewModel: ObservableObject {
     
     private func createSnippet() {
         snippetsParserService.createSnippet(snippet)
-            .sink { completion in
+            .sink { [weak self] completion in
                 switch completion {
                 case .finished: return
-                case let .failure(error):
-                    debugPrint("Error: \(error.localizedDescription)")
+                case .failure:
+                    self?.shouldShowErrorAlert.toggle()
                 }
             } receiveValue: { [weak self] in
                 self?.saveSnippetsInDatabase($0)
@@ -89,8 +90,8 @@ final class SnippetDetailsViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self?.shouldDismissView.toggle()
                     }
-                case let .failure(error):
-                    debugPrint("Error: \(error.localizedDescription)")
+                case .failure:
+                    self?.shouldShowErrorAlert.toggle()
                 }
             }
             .store(in: &cancellables)
@@ -104,8 +105,8 @@ final class SnippetDetailsViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self?.shouldDismissView.toggle()
                     }
-                case let .failure(error):
-                    debugPrint("Error: \(error.localizedDescription)")
+                case .failure:
+                    self?.shouldShowErrorAlert.toggle()
                 }
             }
             .store(in: &cancellables)
