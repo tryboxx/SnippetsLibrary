@@ -20,7 +20,7 @@ SnippetsLibrary is a helpful tool for SwiftUI developers to help with their dail
 Table of Contents:
 
 - [Installation](#installation)
-  - [App Store](#app-store)
+  - [App Distribution](#app-distribution)
   - [Test Flight](#test-flight)
 - [Getting Started](#getting-started)
   - [Availabe Functionalities](#availabe-functionalities)
