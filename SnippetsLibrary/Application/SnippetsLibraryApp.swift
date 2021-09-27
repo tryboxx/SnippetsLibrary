@@ -29,6 +29,9 @@ struct SnippetsLibraryApp: App {
                 activeAppSheet: $activeAppSheet,
                 shouldBeDisabled: $shouldBeDisabled
             )
+            .onReceive(NotificationCenter.default.publisher(for: NSNotification.statusBarSnippetTapped)) {
+                openSnippet(from: $0)
+            }
         }
         .windowStyle(HiddenTitleBarWindowStyle())
         .onChange(of: activeAppView) {
@@ -107,6 +110,15 @@ struct SnippetsLibraryApp: App {
     private func openURL(url: URL?) {
         guard let safeURL = url else { return }
         openURL(safeURL)
+    }
+    
+    private func openSnippet(from output: NotificationCenter.Publisher.Output) {
+        if let userInfo = output.userInfo, let snippetId = userInfo["snippetId"] as? String {
+            NSApplication.shared.windows.first?.center()
+            NSApplication.shared.windows.first?.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            activeAppView = .snippetsLibrary(snippetId)
+        }
     }
     
 }

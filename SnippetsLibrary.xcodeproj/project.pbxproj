@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B8190DF826FA388500E3994C /* SnippetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8190DF726FA388500E3994C /* SnippetType.swift */; };
+		B81B0877270232B600E59F86 /* NSNotification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0876270232B600E59F86 /* NSNotification+Name.swift */; };
+		B81B0879270245CE00E59F86 /* AppMenu+HideWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0878270245CE00E59F86 /* AppMenu+HideWindow.swift */; };
+		B81B087B2702468C00E59F86 /* FileStatusCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B087A2702468C00E59F86 /* FileStatusCardType.swift */; };
 		B82561B426E81D570040A67E /* SnippetsLibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82561B326E81D570040A67E /* SnippetsLibraryApp.swift */; };
 		B82561B826E81D580040A67E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82561B726E81D580040A67E /* Assets.xcassets */; };
 		B82561BB26E81D580040A67E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82561BA26E81D580040A67E /* Preview Assets.xcassets */; };
@@ -44,6 +47,12 @@
 		B84BFEA926F57018007E5109 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEA826F57018007E5109 /* System.swift */; };
 		B84BFEAB26F570CE007E5109 /* CrashlyticsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEAA26F570CE007E5109 /* CrashlyticsError.swift */; };
 		B856D65526F2A29600F60D09 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B856D65426F2A29600F60D09 /* DatabaseService.swift */; };
+		B85AC92E2702153E00A008A6 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AC92D2702153E00A008A6 /* AppMenu.swift */; };
+		B85AC9302702158300A008A6 /* AppDelegate+NSMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AC92F2702158300A008A6 /* AppDelegate+NSMenuDelegate.swift */; };
+		B85AC934270215ED00A008A6 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AC933270215DB00A008A6 /* StatusViewModel.swift */; };
+		B85AC935270215EF00A008A6 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AC932270215DB00A008A6 /* StatusView.swift */; };
+		B85AC9392702160B00A008A6 /* FileStatusCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AC9372702160000A008A6 /* FileStatusCard.swift */; };
+		B85AC93A2702160B00A008A6 /* FileStatusCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AC9382702160000A008A6 /* FileStatusCardViewModel.swift */; };
 		B85D1A9D26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85D1A9C26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift */; };
 		B88BB45626F55DDB00747631 /* LogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88D4A3926F55BEE00164BF5 /* LogsService.swift */; };
 		B88BB45826F564C200747631 /* UserActivityLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88BB45726F564C200747631 /* UserActivityLevel.swift */; };
@@ -110,12 +119,14 @@
 
 /* Begin PBXFileReference section */
 		B8190DF726FA388500E3994C /* SnippetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetType.swift; sourceTree = "<group>"; };
+		B81B0876270232B600E59F86 /* NSNotification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Name.swift"; sourceTree = "<group>"; };
+		B81B0878270245CE00E59F86 /* AppMenu+HideWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppMenu+HideWindow.swift"; sourceTree = "<group>"; };
+		B81B087A2702468C00E59F86 /* FileStatusCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStatusCardType.swift; sourceTree = "<group>"; };
 		B82561B026E81D570040A67E /* Snippets Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snippets Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82561B326E81D570040A67E /* SnippetsLibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsLibraryApp.swift; sourceTree = "<group>"; };
 		B82561B726E81D580040A67E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B82561BA26E81D580040A67E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B82561BC26E81D580040A67E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B82561BD26E81D580040A67E /* SnippetsLibrary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnippetsLibrary.entitlements; sourceTree = "<group>"; };
 		B82561C826E820D50040A67E /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		B82561CA26E820EE0040A67E /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		B82561CD26E821350040A67E /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
@@ -147,6 +158,12 @@
 		B84BFEA826F57018007E5109 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		B84BFEAA26F570CE007E5109 /* CrashlyticsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsError.swift; sourceTree = "<group>"; };
 		B856D65426F2A29600F60D09 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		B85AC92D2702153E00A008A6 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
+		B85AC92F2702158300A008A6 /* AppDelegate+NSMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+NSMenuDelegate.swift"; sourceTree = "<group>"; };
+		B85AC932270215DB00A008A6 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		B85AC933270215DB00A008A6 /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		B85AC9372702160000A008A6 /* FileStatusCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStatusCard.swift; sourceTree = "<group>"; };
+		B85AC9382702160000A008A6 /* FileStatusCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStatusCardViewModel.swift; sourceTree = "<group>"; };
 		B85D1A9C26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsLibraryListSectionView.swift; sourceTree = "<group>"; };
 		B88BB45726F564C200747631 /* UserActivityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityLevel.swift; sourceTree = "<group>"; };
 		B88BB45926F564D100747631 /* UserActivityLogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityLogType.swift; sourceTree = "<group>"; };
@@ -259,7 +276,6 @@
 				B82561B726E81D580040A67E /* Assets.xcassets */,
 				B82561BC26E81D580040A67E /* Info.plist */,
 				B88D4A3526F4E34900164BF5 /* GoogleService-Info.plist */,
-				B82561BD26E81D580040A67E /* SnippetsLibrary.entitlements */,
 				B82561B926E81D580040A67E /* Preview Content */,
 			);
 			path = SnippetsLibrary;
@@ -276,6 +292,7 @@
 		B82561C626E820BD0040A67E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B85AC931270215DB00A008A6 /* Status */,
 				B8CFD8B52700D6EA002A66FF /* SnippetsUpload */,
 				B8F95B0326EEADCE00335D77 /* SnippetImport */,
 				B825621126E968280040A67E /* SnippetDetails */,
@@ -333,6 +350,7 @@
 		B82561D726E822250040A67E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B85AC9362702160000A008A6 /* FileStatusCard */,
 				B8F95B0226EEA34A00335D77 /* SnippetListItem */,
 				B82561F826E8C9FF0040A67E /* SnippetFileCard */,
 				B82561D826E8223B0040A67E /* VisualEffectView.swift */,
@@ -343,6 +361,7 @@
 				B8C549BB26FFA71300720E62 /* AppView.swift */,
 				B8BEF5A826FFBF7E0098A778 /* ToastView.swift */,
 				B8BEF5AC26FFEB600098A778 /* EmptySnippetsListView.swift */,
+				B85AC92D2702153E00A008A6 /* AppMenu.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +379,9 @@
 				B82B557F2700011000DE4766 /* SnippetsLibraryView+Equatable.swift */,
 				B82B55812700014600DE4766 /* StartView+Equatable.swift */,
 				B82B5585270007C500DE4766 /* DatabaseReference+Timeout.swift */,
+				B85AC92F2702158300A008A6 /* AppDelegate+NSMenuDelegate.swift */,
+				B81B0876270232B600E59F86 /* NSNotification+Name.swift */,
+				B81B0878270245CE00E59F86 /* AppMenu+HideWindow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -433,6 +455,24 @@
 				B856D65426F2A29600F60D09 /* DatabaseService.swift */,
 			);
 			path = DatabaseService;
+			sourceTree = "<group>";
+		};
+		B85AC931270215DB00A008A6 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				B85AC932270215DB00A008A6 /* StatusView.swift */,
+				B85AC933270215DB00A008A6 /* StatusViewModel.swift */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
+		B85AC9362702160000A008A6 /* FileStatusCard */ = {
+			isa = PBXGroup;
+			children = (
+				B85AC9372702160000A008A6 /* FileStatusCard.swift */,
+				B85AC9382702160000A008A6 /* FileStatusCardViewModel.swift */,
+			);
+			path = FileStatusCard;
 			sourceTree = "<group>";
 		};
 		B88D4A3826F55BDE00164BF5 /* Logs */ = {
@@ -540,6 +580,7 @@
 				B8CE1CAF26FD43B5004AD5D5 /* URLType.swift */,
 				B8F9CA972700F7F40041CE3E /* DisabledCommandGroupButtonType.swift */,
 				B8F9CA992700F80E0041CE3E /* UploadingStatus.swift */,
+				B81B087A2702468C00E59F86 /* FileStatusCardType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -761,7 +802,10 @@
 				B8F95B0926EEAF4D00335D77 /* SnippetImportViewModel.swift in Sources */,
 				B8EB5AE626F00B2100BE3EF6 /* StartViewMenuItemType.swift in Sources */,
 				B84BFEAB26F570CE007E5109 /* CrashlyticsError.swift in Sources */,
+				B85AC9392702160B00A008A6 /* FileStatusCard.swift in Sources */,
+				B81B0877270232B600E59F86 /* NSNotification+Name.swift in Sources */,
 				B825621326E968380040A67E /* SnippetDetailsView.swift in Sources */,
+				B85AC935270215EF00A008A6 /* StatusView.swift in Sources */,
 				B8C549BC26FFA71300720E62 /* AppView.swift in Sources */,
 				B8F9CA9A2700F80E0041CE3E /* UploadingStatus.swift in Sources */,
 				B8EB5ADB26F0076C00BE3EF6 /* PlistCodingKeys.swift in Sources */,
@@ -773,6 +817,7 @@
 				B82561E226E824A20040A67E /* NSApplication+AppVersion.swift in Sources */,
 				B82561DE26E822A80040A67E /* RecentSnippetCardView.swift in Sources */,
 				B82561E426E825A40040A67E /* AppDelegate.swift in Sources */,
+				B81B087B2702468C00E59F86 /* FileStatusCardType.swift in Sources */,
 				B88BB45C26F564E600747631 /* DatabaseError.swift in Sources */,
 				B82561D926E8223B0040A67E /* VisualEffectView.swift in Sources */,
 				B82561ED26E8C89A0040A67E /* AppSheet.swift in Sources */,
@@ -796,10 +841,14 @@
 				B82561F726E8C9840040A67E /* SearchBar.swift in Sources */,
 				B8C549C426FFBA8600720E62 /* View+Skeletonable.swift in Sources */,
 				B8F9CA982700F7F40041CE3E /* DisabledCommandGroupButtonType.swift in Sources */,
+				B85AC92E2702153E00A008A6 /* AppMenu.swift in Sources */,
 				B82561E926E8C7D60040A67E /* SnippetsLibraryView.swift in Sources */,
+				B85AC934270215ED00A008A6 /* StatusViewModel.swift in Sources */,
+				B85AC9302702158300A008A6 /* AppDelegate+NSMenuDelegate.swift in Sources */,
 				B8EB5ADF26F00A4A00BE3EF6 /* SnippetDetailsViewType.swift in Sources */,
 				B84BFEA926F57018007E5109 /* System.swift in Sources */,
 				B8B6DE7B26ED9A3300E49C57 /* SnippetDetailsViewModel.swift in Sources */,
+				B81B0879270245CE00E59F86 /* AppMenu+HideWindow.swift in Sources */,
 				B8CE1CB826FF965D004AD5D5 /* NetworkService.swift in Sources */,
 				B8BEF5A926FFBF7E0098A778 /* ToastView.swift in Sources */,
 				B8CFD8B42700D6A7002A66FF /* SnippetsUploadView.swift in Sources */,
@@ -807,6 +856,7 @@
 				B8CE1CB026FD43B5004AD5D5 /* URLType.swift in Sources */,
 				B82561D626E821F20040A67E /* StartViewRecentSnippetsView.swift in Sources */,
 				B82561D126E821770040A67E /* ActiveAppView.swift in Sources */,
+				B85AC93A2702160B00A008A6 /* FileStatusCardViewModel.swift in Sources */,
 				B88BB45A26F564D100747631 /* UserActivityLogType.swift in Sources */,
 				B82561DC26E822840040A67E /* View+Visibility.swift in Sources */,
 				B856D65526F2A29600F60D09 /* DatabaseService.swift in Sources */,
@@ -979,11 +1029,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SnippetsLibrary/SnippetsLibrary.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SnippetsLibrary/SnippetsLibraryDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetsLibrary/Preview Content\"";
 				DEVELOPMENT_TEAM = 7WLUFJRJ56;
@@ -1012,7 +1062,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetsLibrary/Preview Content\"";
 				DEVELOPMENT_TEAM = 7WLUFJRJ56;

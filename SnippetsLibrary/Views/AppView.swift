@@ -47,13 +47,22 @@ struct AppView: View {
                 viewModel: SnippetsLibraryViewModel(),
                 activeSheet: $activeAppSheet
             )
+            .onAppear {
+                updateSystemButtons(hidden: false)
+            }
         case .importSnippet:
             SnippetImportView(viewModel: SnippetImportViewModel(activeAppView: $activeAppView))
+                .onAppear {
+                    updateSystemButtons(hidden: false)
+                }
         case let .snippetsLibrary(snippetId):
             SnippetsLibraryView(
                 viewModel: SnippetsLibraryViewModel(activeSnippetId: snippetId),
                 activeSheet: $activeAppSheet
             )
+            .onAppear {
+                updateSystemButtons(hidden: false)
+            }
         case .none:
             StartView(
                 viewModel: StartViewModel(
