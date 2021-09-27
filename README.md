@@ -34,17 +34,17 @@ Table of Contents:
 
 The SnippetsLibrary app can be downloaded directly from the Mac App Store or you can join the Developer Beta Testing Program via Test Flight:
 
-### App Store
+### App Distribution
 
-Check the released version of Snippets Library in the Mac App Store:
+Check the newest app version of Snippets Library:
 
 ```
-Not available yet
+https://bit.ly/SnippetsLibrary
 ```
 
 ### Test Flight
 
-You can join the SnippetsLibrary app beta testing by clicking on the invite link below:
+You can join the SnippetsLibrary app beta testing by clicking on the invite link below (macOS Monterey required):
 
 ```
 https://testflight.apple.com/join/P1tNGffH
