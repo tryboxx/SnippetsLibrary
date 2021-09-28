@@ -122,6 +122,8 @@
 		B81B0876270232B600E59F86 /* NSNotification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Name.swift"; sourceTree = "<group>"; };
 		B81B0878270245CE00E59F86 /* AppMenu+HideWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppMenu+HideWindow.swift"; sourceTree = "<group>"; };
 		B81B087A2702468C00E59F86 /* FileStatusCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStatusCardType.swift; sourceTree = "<group>"; };
+		B81B087C2702852600E59F86 /* SnippetsLibrary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnippetsLibrary.entitlements; sourceTree = "<group>"; };
+		B81B087D2702852600E59F86 /* SnippetsLibraryDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnippetsLibraryDebug.entitlements; sourceTree = "<group>"; };
 		B82561B026E81D570040A67E /* Snippets Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snippets Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82561B326E81D570040A67E /* SnippetsLibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsLibraryApp.swift; sourceTree = "<group>"; };
 		B82561B726E81D580040A67E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -265,6 +267,8 @@
 		B82561B226E81D570040A67E /* SnippetsLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				B81B087C2702852600E59F86 /* SnippetsLibrary.entitlements */,
+				B81B087D2702852600E59F86 /* SnippetsLibraryDebug.entitlements */,
 				B82561CF26E821660040A67E /* Application */,
 				B8B6DE7F26EE545800E49C57 /* Dependencies */,
 				B82561D726E822250040A67E /* Views */,
