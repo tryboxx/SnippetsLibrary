@@ -44,6 +44,9 @@
 		B84BFEA626F56A6A007E5109 /* CrashlyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEA526F56A6A007E5109 /* CrashlyticsService.swift */; };
 		B84BFEA926F57018007E5109 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEA826F57018007E5109 /* System.swift */; };
 		B84BFEAB26F570CE007E5109 /* CrashlyticsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEAA26F570CE007E5109 /* CrashlyticsError.swift */; };
+		B8546F38270771020043A99F /* SnippetCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8546F37270771020043A99F /* SnippetCategory.swift */; };
+		B8546F3A270773FE0043A99F /* SnippetsLibraryListFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8546F39270773FE0043A99F /* SnippetsLibraryListFilterView.swift */; };
+		B8546F3C27077C310043A99F /* SnippetsLibraryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8546F3B27077C310043A99F /* SnippetsLibraryListViewModel.swift */; };
 		B856D65526F2A29600F60D09 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B856D65426F2A29600F60D09 /* DatabaseService.swift */; };
 		B85AC92E2702153E00A008A6 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AC92D2702153E00A008A6 /* AppMenu.swift */; };
 		B85AC9302702158300A008A6 /* AppDelegate+NSMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85AC92F2702158300A008A6 /* AppDelegate+NSMenuDelegate.swift */; };
@@ -158,6 +161,9 @@
 		B84BFEA526F56A6A007E5109 /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
 		B84BFEA826F57018007E5109 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		B84BFEAA26F570CE007E5109 /* CrashlyticsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsError.swift; sourceTree = "<group>"; };
+		B8546F37270771020043A99F /* SnippetCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetCategory.swift; sourceTree = "<group>"; };
+		B8546F39270773FE0043A99F /* SnippetsLibraryListFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsLibraryListFilterView.swift; sourceTree = "<group>"; };
+		B8546F3B27077C310043A99F /* SnippetsLibraryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsLibraryListViewModel.swift; sourceTree = "<group>"; };
 		B856D65426F2A29600F60D09 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		B85AC92D2702153E00A008A6 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		B85AC92F2702158300A008A6 /* AppDelegate+NSMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+NSMenuDelegate.swift"; sourceTree = "<group>"; };
@@ -583,6 +589,7 @@
 				B8F9CA972700F7F40041CE3E /* DisabledCommandGroupButtonType.swift */,
 				B8F9CA992700F80E0041CE3E /* UploadingStatus.swift */,
 				B81B087A2702468C00E59F86 /* FileStatusCardType.swift */,
+				B8546F37270771020043A99F /* SnippetCategory.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -600,6 +607,8 @@
 			children = (
 				B82561EF26E8C8C20040A67E /* SnippetsLibraryListView.swift */,
 				B85D1A9C26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift */,
+				B8546F39270773FE0043A99F /* SnippetsLibraryListFilterView.swift */,
+				B8546F3B27077C310043A99F /* SnippetsLibraryListViewModel.swift */,
 			);
 			path = SnippetLibraryList;
 			sourceTree = "<group>";
@@ -843,9 +852,11 @@
 				B8C549C426FFBA8600720E62 /* View+Skeletonable.swift in Sources */,
 				B8F9CA982700F7F40041CE3E /* DisabledCommandGroupButtonType.swift in Sources */,
 				B85AC92E2702153E00A008A6 /* AppMenu.swift in Sources */,
+				B8546F38270771020043A99F /* SnippetCategory.swift in Sources */,
 				B82561E926E8C7D60040A67E /* SnippetsLibraryView.swift in Sources */,
 				B85AC934270215ED00A008A6 /* StatusViewModel.swift in Sources */,
 				B85AC9302702158300A008A6 /* AppDelegate+NSMenuDelegate.swift in Sources */,
+				B8546F3A270773FE0043A99F /* SnippetsLibraryListFilterView.swift in Sources */,
 				B8EB5ADF26F00A4A00BE3EF6 /* SnippetDetailsViewType.swift in Sources */,
 				B84BFEA926F57018007E5109 /* System.swift in Sources */,
 				B8B6DE7B26ED9A3300E49C57 /* SnippetDetailsViewModel.swift in Sources */,
@@ -872,6 +883,7 @@
 				B82561B426E81D570040A67E /* SnippetsLibraryApp.swift in Sources */,
 				B88BB45626F55DDB00747631 /* LogsService.swift in Sources */,
 				B88D7A6326F7A5C000B114F6 /* SnippetPlist+Dictonary.swift in Sources */,
+				B8546F3C27077C310043A99F /* SnippetsLibraryListViewModel.swift in Sources */,
 				B8CE1CAB26FD4193004AD5D5 /* DisabledCommandGroupButton.swift in Sources */,
 				B85D1A9D26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift in Sources */,
 				B82561E626E8C5490040A67E /* Mocks.swift in Sources */,
