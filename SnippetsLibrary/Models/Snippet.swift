@@ -22,9 +22,17 @@ struct Snippet: Codable, Identifiable, Hashable {
     var platform: SnippetPlatform
     var availability: SnippetAvailability
     
+    // MARK: - Computed Properties
+    
     var type: SnippetType {
         title.contains("+") ? .extending : .snippets
     }
+    
+    var category: SnippetCategory {
+        return SnippetCategory.allCases.first(where: { title.lowercased().contains($0.rawValue) }) ?? .helper
+    }
+    
+    // MARK: - CodingKeys
     
     enum CodingKeys: String, CodingKey {
         case id, title, summary, content, author, completion, platform, availability

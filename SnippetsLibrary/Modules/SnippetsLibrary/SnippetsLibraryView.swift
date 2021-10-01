@@ -21,13 +21,15 @@ struct SnippetsLibraryView: View {
     var body: some View {
         HSplitView {
             SnippetsLibraryListView(
-                snippets: $viewModel.snippets,
-                selectedSnippetId: $viewModel.selectedSnippetId
-            ) {
-                viewModel.fetchSnippets()
-            } onRemove: {
-                viewModel.onRemove($0)
-            }
+                viewModel: SnippetsLibraryListViewModel(
+                    snippets: $viewModel.snippets,
+                    selectedSnippetId: $viewModel.selectedSnippetId
+                ) {
+                    viewModel.fetchSnippets()
+                } onRemove: {
+                    viewModel.onRemove($0)
+                }
+            )
             
             SnippetsLibraryPreviewView(
                 snippets: $viewModel.snippets,

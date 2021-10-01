@@ -15,27 +15,7 @@ struct SnippetsLibraryListView: View {
     
     // MARK: - Stored Properties
     
-    @Binding internal var snippets: [Snippet]
-    @Binding internal var selectedSnippetId: SnippetId?
-    
-    @State private var searchedText = ""
-    @State var shouldShowRemoveAlert = false
-    
-    private(set) var onReload: () -> Void
-    private(set) var onRemove: (_ snippetId: SnippetId?) -> Void
-    
-    // MARK: - Computed Properties
-    
-    private var snippetGroups: [[Snippet]] {
-        return [
-            snippets.filter({ $0.type == .snippets }).filter { matchingSnippet($0) },
-            snippets.filter({ $0.type == .extending }).filter { matchingSnippet($0) }
-        ]
-    }
-    
-    private var hasAnyResults: Bool {
-        (snippetGroups.first?.isEmpty == true) && (snippetGroups.last?.isEmpty == true)
-    }
+    @ObservedObject private(set) var viewModel: SnippetsLibraryListViewModel
     
     // MARK: - Views
     
@@ -43,11 +23,24 @@ struct SnippetsLibraryListView: View {
         VStack {
             HStack {
                 SearchBar {
-                    searchedText = $0
+                    viewModel.searchedText = $0
                 }
+                .padding(.leading)
                 
                 Button {
-                    onReload()
+                    withAnimation {
+                        viewModel.shouldShowFilterView.toggle()
+                    }
+                } label: {
+                    Image(systemName: "line.horizontal.3.decrease.circle")
+                        .font(.system(size: 15, weight: .light))
+                        .foregroundColor(Color.primary.opacity(Layout.mediumOpacity))
+                }
+                .buttonStyle(PlainButtonStyle())
+                .help("Choose the filters.")
+                
+                Button {
+                    viewModel.onReload()
                 } label: {
                     Image(systemName: "arrow.down.circle")
                         .font(.system(size: 15, weight: .light))
@@ -55,18 +48,25 @@ struct SnippetsLibraryListView: View {
                 }
                 .buttonStyle(PlainButtonStyle())
                 .help("Pull all changes from remote.")
+                .padding(.trailing, Layout.smallPadding)
             }
             .padding(.top, Layout.largePadding)
-            .padding(.horizontal)
             
-            List(selection: $selectedSnippetId) {
+            SnippetsLibraryListFilterView(selectedCategory: $viewModel.selectedCategory)
+                .makeVisible(
+                    viewModel.shouldShowFilterView,
+                    removed: true
+                )
+                .animation(.default)
+            
+            List(selection: $viewModel.selectedSnippetId) {
                 ForEach(
-                    snippetGroups,
+                    viewModel.snippetGroups,
                     id: \.self
                 ) {
                     SnippetsLibraryListSectionView(
                         snippets: $0,
-                        shouldShowRemoveAlert: $shouldShowRemoveAlert
+                        shouldShowRemoveAlert: $viewModel.shouldShowRemoveAlert
                     )
                     .makeVisible(
                         !$0.isEmpty,
@@ -75,7 +75,7 @@ struct SnippetsLibraryListView: View {
                 }
             }
             .overlay(
-                EmptySnippetsListView(isListEmpty: .constant(snippets.isEmpty || hasAnyResults ))
+                EmptySnippetsListView(isListEmpty: .constant(viewModel.snippets.isEmpty || viewModel.hasAnyResults ))
             )
         }
         .frame(minWidth: Constants.minWidth)
@@ -86,32 +86,24 @@ struct SnippetsLibraryListView: View {
             )
         )
         .edgesIgnoringSafeArea(.top)
-        .alert(isPresented: $shouldShowRemoveAlert) {
+        .alert(isPresented: $viewModel.shouldShowRemoveAlert) {
             Alert(
                 title: Text("Confirm removing"),
                 message: Text("You sure want to remove this snippet?"),
                 primaryButton:
                     .destructive(
                         Text("Yes, remove"),
-                        action: { onRemove(selectedSnippetId) }
+                        action: { viewModel.onRemove(viewModel.selectedSnippetId) }
                     ),
                 secondaryButton: .cancel()
             )
         }
     }
     
-    // MARK: - Methods
-    
-    private func matchingSnippet(_ snippet: Snippet) -> Bool {
-        snippet.title.lowercased().contains(searchedText.lowercased()) ||
-            snippet.summary.lowercased().contains(searchedText.lowercased()) ||
-            searchedText.isEmpty
-    }
-    
 }
 
 struct SnippetsLibraryListView_Previews: PreviewProvider {
     static var previews: some View {
-        SnippetsLibraryListView(snippets: .constant([]), selectedSnippetId: .constant(nil), onReload: {}, onRemove: { _ in })
+        SnippetsLibraryListView(viewModel: SnippetsLibraryListViewModel(snippets: .constant([]), selectedSnippetId: .constant(nil), onReload: {}, onRemove: { _ in }))
     }
 }
