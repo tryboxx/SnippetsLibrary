@@ -9,6 +9,11 @@ import SwiftUI
 
 struct AppView: View {
     
+    private enum Constants {
+        static let statusWindowClassName = "NSStatusBarWindow"
+        static let delay = DispatchTime.now() + 0.01
+    }
+    
     // MARK: - Stored Properties
     
     @Environment(\.scenePhase) var scenePhase
@@ -28,6 +33,9 @@ struct AppView: View {
                 withAnimation {
                     shouldShowNetworkAlert.toggle()
                 }
+            }
+            .onOpenURL {
+                openSnippet(fromURL: $0)
             }
             .makeDisplayed(
                 with: $shouldShowNetworkAlert,
@@ -83,6 +91,24 @@ struct AppView: View {
             window.standardWindowButton(.zoomButton)?.isHidden = hidden
             window.standardWindowButton(.miniaturizeButton)?.isHidden = hidden
             window.standardWindowButton(.closeButton)?.isHidden = hidden
+        }
+    }
+    
+    private func openSnippet(fromURL url: URL) {
+        closeWindowsIfVisible()
+        let snippetId = url.absoluteString.replacingOccurrences(of: "widget://", with: "")
+        
+        DispatchQueue.main.asyncAfter(deadline: Constants.delay) {
+            NSApplication.shared.windows.first?.orderFront(nil)
+            activeAppView = .snippetsLibrary(snippetId)
+        }
+    }
+    
+    private func closeWindowsIfVisible() {
+        for window in NSApplication.shared.windows where window.className != Constants.statusWindowClassName {
+            DispatchQueue.main.async {
+                window.close()
+            }
         }
     }
     
