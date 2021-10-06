@@ -87,6 +87,7 @@ final class DatabaseServiceImpl: DatabaseService {
                     }
                 }
                 
+                self?.backupSnippets(snippets.compactMap { SnippetPlist(from: $0) })
                 promise(.success(snippets))
             }
         }
@@ -126,6 +127,22 @@ final class DatabaseServiceImpl: DatabaseService {
             }
         }
         .eraseToAnyPublisher()
+    }
+    
+    private func backupSnippets(_ snippets: [SnippetPlist]) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        let dateString = formatter.string(from: Date())
+        
+        let ref = ref.child("snippetsBackup").child(dateString)
+        
+        let deviceUUID: [String: Any] = ["fromDevice": System.getHardwareUUID()]
+        ref.setValue(deviceUUID)
+        
+        for snippet in snippets {
+            let values = snippet.convertedToDictonary()
+            ref.child(snippet.id).setValue(values)
+        }
     }
     
 }

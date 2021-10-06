@@ -10,10 +10,7 @@ import SwiftUI
 struct StartView: View {
     
     private enum Constants {
-        static let logoImageHeight: CGFloat = 80
-        static let devToolsImageHeight: CGFloat = 50
-        static let devToolsImageBottomPadding: CGFloat = -34.0
-        static let titleTopPadding: CGFloat = 40.0
+        static let logoImageHeight: CGFloat = 130
         static let menuItemsSpacing: CGFloat = 12.0
     }
     
@@ -39,31 +36,19 @@ struct StartView: View {
                 .padding()
                 .buttonStyle(PlainButtonStyle())
                 
-                ZStack(alignment: .bottomTrailing) {
-                    HStack(spacing: .zero) {
-                        Image("icLogo")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: Constants.logoImageHeight)
-                            .padding(.top)
-                            .padding(.trailing, Layout.largePadding * 2)
-                    }
-                    
-                    Image("icDevTools")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: Constants.devToolsImageHeight)
-                        .padding(.bottom, Constants.devToolsImageBottomPadding)
-                }
+                Image("icLogo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: Constants.logoImageHeight)
+                    .padding(.top, Layout.smallPadding)
                 
                 Text("Snippets Library")
                     .font(.system(size: 40.0, weight: .regular))
-                    .padding(.top, Constants.titleTopPadding)
                 
                 Text("Version \(NSApplication.appVersion)")
                     .font(.system(size: 13.0, weight: .light))
                     .foregroundColor(Color.primary.opacity(Layout.mediumOpacity))
-                    .padding(.top, Layout.smallPadding)
+                    .padding(.top, Layout.smallPadding / 2)
                 
                 Spacer()
                 

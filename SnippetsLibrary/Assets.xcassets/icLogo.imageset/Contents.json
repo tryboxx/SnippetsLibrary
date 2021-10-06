@@ -1,17 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Asset 1.pdf",
-      "idiom" : "universal"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "dark"
-        }
-      ],
-      "filename" : "Asset 2.pdf",
+      "filename" : "icLogo.pdf",
       "idiom" : "universal"
     }
   ],

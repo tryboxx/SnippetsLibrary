@@ -88,10 +88,6 @@
 		B88D7A6326F7A5C000B114F6 /* SnippetPlist+Dictonary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88D7A6226F7A5C000B114F6 /* SnippetPlist+Dictonary.swift */; };
 		B88D7A6C26F7FB4E00B114F6 /* SnippetsLibraryUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88D7A6B26F7FB4E00B114F6 /* SnippetsLibraryUnitTests.swift */; };
 		B88D7A7A26F7FB8200B114F6 /* SnippetsLibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88D7A7926F7FB8200B114F6 /* SnippetsLibraryUITests.swift */; };
-		B89775D327037F1C00E4B706 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = B89775D227037F1C00E4B706 /* Sourceful */; };
-		B89775D62703809900E4B706 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B89775D52703809900E4B706 /* FirebaseCrashlytics */; };
-		B89775D82703809900E4B706 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B89775D72703809900E4B706 /* FirebaseDatabase */; };
-		B89775DB270380C500E4B706 /* SwiftUISkeleton in Frameworks */ = {isa = PBXBuildFile; productRef = B89775DA270380C500E4B706 /* SwiftUISkeleton */; };
 		B8B6DE7926ED8F5500E49C57 /* TextFieldStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6DE7826ED8F5500E49C57 /* TextFieldStyleModifier.swift */; };
 		B8B6DE7B26ED9A3300E49C57 /* SnippetDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6DE7A26ED9A3300E49C57 /* SnippetDetailsViewModel.swift */; };
 		B8B6DE7E26EE4BB500E49C57 /* SnippetsParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6DE7D26EE4BB500E49C57 /* SnippetsParserService.swift */; };
@@ -100,6 +96,10 @@
 		B8BEF5A926FFBF7E0098A778 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF5A826FFBF7E0098A778 /* ToastView.swift */; };
 		B8BEF5AB26FFC8AC0098A778 /* View+Displayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF5AA26FFC8AC0098A778 /* View+Displayed.swift */; };
 		B8BEF5AD26FFEB600098A778 /* EmptySnippetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF5AC26FFEB600098A778 /* EmptySnippetsListView.swift */; };
+		B8C1F6C0270E13BA0088E5B5 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = B8C1F6BF270E13BA0088E5B5 /* Sourceful */; };
+		B8C1F6C3270E13C30088E5B5 /* SwiftUISkeleton in Frameworks */ = {isa = PBXBuildFile; productRef = B8C1F6C2270E13C30088E5B5 /* SwiftUISkeleton */; };
+		B8C1F6C6270E13E60088E5B5 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B8C1F6C5270E13E60088E5B5 /* FirebaseCrashlytics */; };
+		B8C1F6C8270E13E60088E5B5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B8C1F6C7270E13E60088E5B5 /* FirebaseDatabase */; };
 		B8C549BA26FF9C0800720E62 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549B926FF9C0800720E62 /* NetworkObserver.swift */; };
 		B8C549BC26FFA71300720E62 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549BB26FFA71300720E62 /* AppView.swift */; };
 		B8C549C426FFBA8600720E62 /* View+Skeletonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549C326FFBA8600720E62 /* View+Skeletonable.swift */; };
@@ -293,10 +293,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B89775D82703809900E4B706 /* FirebaseDatabase in Frameworks */,
-				B89775D327037F1C00E4B706 /* Sourceful in Frameworks */,
-				B89775D62703809900E4B706 /* FirebaseCrashlytics in Frameworks */,
-				B89775DB270380C500E4B706 /* SwiftUISkeleton in Frameworks */,
+				B8C1F6C6270E13E60088E5B5 /* FirebaseCrashlytics in Frameworks */,
+				B8C1F6C0270E13BA0088E5B5 /* Sourceful in Frameworks */,
+				B8C1F6C8270E13E60088E5B5 /* FirebaseDatabase in Frameworks */,
+				B8C1F6C3270E13C30088E5B5 /* SwiftUISkeleton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,10 +807,10 @@
 			);
 			name = SnippetsLibrary;
 			packageProductDependencies = (
-				B89775D227037F1C00E4B706 /* Sourceful */,
-				B89775D52703809900E4B706 /* FirebaseCrashlytics */,
-				B89775D72703809900E4B706 /* FirebaseDatabase */,
-				B89775DA270380C500E4B706 /* SwiftUISkeleton */,
+				B8C1F6BF270E13BA0088E5B5 /* Sourceful */,
+				B8C1F6C2270E13C30088E5B5 /* SwiftUISkeleton */,
+				B8C1F6C5270E13E60088E5B5 /* FirebaseCrashlytics */,
+				B8C1F6C7270E13E60088E5B5 /* FirebaseDatabase */,
 			);
 			productName = SnippetsLibrary;
 			productReference = B82561B026E81D570040A67E /* Snippets Library.app */;
@@ -887,9 +887,9 @@
 			);
 			mainGroup = B82561A726E81D570040A67E;
 			packageReferences = (
-				B89775D127037F1C00E4B706 /* XCRemoteSwiftPackageReference "Sourceful" */,
-				B89775D42703809900E4B706 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				B89775D9270380C500E4B706 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */,
+				B8C1F6BE270E13BA0088E5B5 /* XCRemoteSwiftPackageReference "Sourceful" */,
+				B8C1F6C1270E13C30088E5B5 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */,
+				B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B82561B126E81D570040A67E /* Products */;
 			projectDirPath = "";
@@ -1127,7 +1127,7 @@
 				CODE_SIGN_ENTITLEMENTS = SnippetsLibraryWidget/SnippetsLibraryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7WLUFJRJ56;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1160,7 +1160,7 @@
 				CODE_SIGN_ENTITLEMENTS = SnippetsLibraryWidget/SnippetsLibraryWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 7WLUFJRJ56;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1307,7 +1307,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetsLibrary/Preview Content\"";
 				DEVELOPMENT_TEAM = 7WLUFJRJ56;
@@ -1337,7 +1337,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetsLibrary/Preview Content\"";
 				DEVELOPMENT_TEAM = 7WLUFJRJ56;
@@ -1489,52 +1489,52 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B89775D127037F1C00E4B706 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+		B8C1F6BE270E13BA0088E5B5 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/Sourceful.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.0;
+				branch = main;
+				kind = branch;
 			};
 		};
-		B89775D42703809900E4B706 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		B89775D9270380C500E4B706 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */ = {
+		B8C1F6C1270E13C30088E5B5 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/serbats/SwiftUISkeleton.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = master;
+				kind = branch;
+			};
+		};
+		B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B89775D227037F1C00E4B706 /* Sourceful */ = {
+		B8C1F6BF270E13BA0088E5B5 /* Sourceful */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B89775D127037F1C00E4B706 /* XCRemoteSwiftPackageReference "Sourceful" */;
+			package = B8C1F6BE270E13BA0088E5B5 /* XCRemoteSwiftPackageReference "Sourceful" */;
 			productName = Sourceful;
 		};
-		B89775D52703809900E4B706 /* FirebaseCrashlytics */ = {
+		B8C1F6C2270E13C30088E5B5 /* SwiftUISkeleton */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B89775D42703809900E4B706 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = B8C1F6C1270E13C30088E5B5 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */;
+			productName = SwiftUISkeleton;
+		};
+		B8C1F6C5270E13E60088E5B5 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		B89775D72703809900E4B706 /* FirebaseDatabase */ = {
+		B8C1F6C7270E13E60088E5B5 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B89775D42703809900E4B706 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
-		};
-		B89775DA270380C500E4B706 /* SwiftUISkeleton */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B89775D9270380C500E4B706 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */;
-			productName = SwiftUISkeleton;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
