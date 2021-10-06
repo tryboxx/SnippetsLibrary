@@ -1,9 +1,7 @@
 <br />
 <p align="center">
-    <a href="https://swiftdevtools.com" target="_blank"><img width="200" height="147" src="http://swiftdevtools.com/snippetslibrary/images/devtoolslogo.svg" alt="Snippets Library Logo"></a>
-    <br />
-    <br />
-    <b>A snippets library for SwiftUI</b>
+    <a href="https://swiftdevtools.com" target="_blank"><img width="147" height="147" src="http://swiftdevtools.com/snippetslibrary/images/snippets_library_logo.svg" alt="Snippets Library Logo"></a>
+    <h2 align="center">Snippets Library for SwiftUI</h2>
     <br />
     <br />
 </p>
@@ -32,7 +30,7 @@ Table of Contents:
       
 ## Installation
 
-The SnippetsLibrary app can be downloaded directly from the Mac App Store or you can join the Developer Beta Testing Program via Test Flight:
+The SnippetsLibrary app can be downloaded directly from our servers or you can join the Developer Beta Testing Program via Test Flight:
 
 ### App Distribution
 
