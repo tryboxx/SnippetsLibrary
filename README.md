@@ -2,12 +2,12 @@
 <p align="center">
     <a href="https://swiftdevtools.com" target="_blank"><img width="147" height="147" src="http://swiftdevtools.com/snippetslibrary/images/snippets_library_logo.svg" alt="Snippets Library Logo"></a>
     <h2 align="center">Snippets Library for SwiftUI</h2>
-    <br />
-    <br />
 </p>
 
 [![Main Branch Actions Status](https://github.com/tryboxx/SnippetsLibrary/actions/workflows/tests.yml/badge.svg)](https://github.com/tryboxx/SnippetsLibrary/actions)
 [![Twitter Account](https://img.shields.io/twitter/follow/swift_devtools?color=00acee&label=twitter&style=flat-square)](https://twitter.com/swift_devtools)
+
+<br />
 
 [**SnippetsLibrary has not been released yet! But we're working on it!**](https://swiftdevtools.com/)
 
