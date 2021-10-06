@@ -60,6 +60,9 @@ Getting started with the SnippetsLibrary is as simple as cloning this project wi
 * [**Search for snippets**](https://swiftdevtools/snippetslibrary/docs/snippet/searching) - Open and search in the snippets library.
 * [**Create new snippet**](https://swiftdevtools/snippetslibrary/docs/snippet/creating) - Create a new snippet file.
 * [**Upload existing snippet**](https://swiftdevtools/snippetslibrary/docs/snippet/uploading) - Import an existing code snippet.
+* [**Upload all snippets to Xcode**](https://swiftdevtools/snippetslibrary/docs/snippet/xcode-uploading) - Export all code snippets from the Snippets Library directly to the Xcode.
+* [**Use status bar app quick menu**](https://swiftdevtools/snippetslibrary/docs/snippet/quick-menu) - Quick access to the featured code snippets, developer documentation and actions.
+* [**Add widgets to the notification center**](https://swiftdevtools/snippetslibrary/docs/snippet/widgets) - Open a snippet from the macOS widget.
 
 For the complete documentation, visit [https://swiftdevtools/snippetslibrary/docs](https://swiftdevtools/snippetslibrary/docs). For more tutorials, news and announcements check out our [blog](https://medium.com/swiftdevtools) or social media accounts.
 
