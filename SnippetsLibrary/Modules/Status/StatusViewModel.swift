@@ -30,7 +30,7 @@ final class StatusViewModel: ObservableObject {
     // MARK: - Methods
     
     private func fetchSnippets() {
-        userDefaultsService.fetchRecentSnippets()
+        userDefaultsService.fetchSnippets(fetchingType: .recent)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {

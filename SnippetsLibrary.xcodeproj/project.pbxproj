@@ -66,6 +66,8 @@
 		B82B55802700011000DE4766 /* SnippetsLibraryView+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B557F2700011000DE4766 /* SnippetsLibraryView+Equatable.swift */; };
 		B82B55822700014600DE4766 /* StartView+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B55812700014600DE4766 /* StartView+Equatable.swift */; };
 		B82B5586270007C500DE4766 /* DatabaseReference+Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B5585270007C500DE4766 /* DatabaseReference+Timeout.swift */; };
+		B832886D27160F17006BD465 /* SnippetsFetchingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B832886C27160F17006BD465 /* SnippetsFetchingType.swift */; };
+		B832886E27160F3C006BD465 /* SnippetsFetchingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B832886C27160F17006BD465 /* SnippetsFetchingType.swift */; };
 		B84BFEA626F56A6A007E5109 /* CrashlyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEA526F56A6A007E5109 /* CrashlyticsService.swift */; };
 		B84BFEA926F57018007E5109 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEA826F57018007E5109 /* System.swift */; };
 		B84BFEAB26F570CE007E5109 /* CrashlyticsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BFEAA26F570CE007E5109 /* CrashlyticsError.swift */; };
@@ -218,6 +220,7 @@
 		B82B557F2700011000DE4766 /* SnippetsLibraryView+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnippetsLibraryView+Equatable.swift"; sourceTree = "<group>"; };
 		B82B55812700014600DE4766 /* StartView+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartView+Equatable.swift"; sourceTree = "<group>"; };
 		B82B5585270007C500DE4766 /* DatabaseReference+Timeout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Timeout.swift"; sourceTree = "<group>"; };
+		B832886C27160F17006BD465 /* SnippetsFetchingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsFetchingType.swift; sourceTree = "<group>"; };
 		B84BFEA526F56A6A007E5109 /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
 		B84BFEA826F57018007E5109 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		B84BFEAA26F570CE007E5109 /* CrashlyticsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsError.swift; sourceTree = "<group>"; };
@@ -467,6 +470,8 @@
 				B82561D026E821770040A67E /* ActiveAppView.swift */,
 				B82561E326E825A40040A67E /* AppDelegate.swift */,
 				B82561EC26E8C89A0040A67E /* AppSheet.swift */,
+				B8C549BB26FFA71300720E62 /* AppView.swift */,
+				B85AC92D2702153E00A008A6 /* AppMenu.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -496,10 +501,8 @@
 				B82561F626E8C9840040A67E /* SearchBar.swift */,
 				B8F95B0626EEAEB200335D77 /* SnippetDropCellView.swift */,
 				B8CE1CAA26FD4193004AD5D5 /* DisabledCommandGroupButton.swift */,
-				B8C549BB26FFA71300720E62 /* AppView.swift */,
 				B8BEF5A826FFBF7E0098A778 /* ToastView.swift */,
 				B8BEF5AC26FFEB600098A778 /* EmptySnippetsListView.swift */,
-				B85AC92D2702153E00A008A6 /* AppMenu.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				B8F9CA992700F80E0041CE3E /* UploadingStatus.swift */,
 				B81B087A2702468C00E59F86 /* FileStatusCardType.swift */,
 				B8546F37270771020043A99F /* SnippetCategory.swift */,
+				B832886C27160F17006BD465 /* SnippetsFetchingType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -967,6 +971,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B80D24A027090E1A0057582F /* SnippetPlist+Dictonary.swift in Sources */,
+				B832886E27160F3C006BD465 /* SnippetsFetchingType.swift in Sources */,
 				B80D24A6270916020057582F /* SmallWidgetView.swift in Sources */,
 				B80D249C27090E000057582F /* SnippetType.swift in Sources */,
 				B80D24B2270A72ED0057582F /* SnippetsLibraryWidgetView.swift in Sources */,
@@ -1073,6 +1078,7 @@
 				B82561B426E81D570040A67E /* SnippetsLibraryApp.swift in Sources */,
 				B88BB45626F55DDB00747631 /* LogsService.swift in Sources */,
 				B88D7A6326F7A5C000B114F6 /* SnippetPlist+Dictonary.swift in Sources */,
+				B832886D27160F17006BD465 /* SnippetsFetchingType.swift in Sources */,
 				B8546F3C27077C310043A99F /* SnippetsLibraryListViewModel.swift in Sources */,
 				B8CE1CAB26FD4193004AD5D5 /* DisabledCommandGroupButton.swift in Sources */,
 				B85D1A9D26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift in Sources */,

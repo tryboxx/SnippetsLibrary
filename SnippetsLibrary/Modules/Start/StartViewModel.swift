@@ -42,7 +42,7 @@ final class StartViewModel: ObservableObject {
     }
     
     internal func fetchRecentSnippets() {
-        userDefaultsService.fetchRecentSnippets()
+        userDefaultsService.fetchSnippets(fetchingType: .recent)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
                 self?.recentSnippets = $0
