@@ -10,7 +10,8 @@ import Combine
 
 protocol UserDefaultsService {
     func saveRecentSnippet(_ snippet: Snippet)
-    func fetchRecentSnippets() -> AnyPublisher<[Snippet], Never>
+    func fetchSnippets(fetchingType: SnippetsFetchingType) -> AnyPublisher<[Snippet], Never>
+    func saveSnippetsLocally(_ snippets: [Snippet])
     
     func fetchRecentSnippetsFromAppGroup() -> [Snippet]
 }
@@ -19,6 +20,7 @@ final class UserDefaultsServiceImpl: UserDefaultsService {
     
     private enum Constants {
         static let recentSnippetKey = "RecentSnippet"
+        static let localSnippetKey = "LocalSnippet"
         static let appGroupName = "group.com.cphlowiec.SnippetsLibrary"
     }
     
@@ -46,8 +48,9 @@ final class UserDefaultsServiceImpl: UserDefaultsService {
         )
     }
     
-    internal func fetchRecentSnippets() -> AnyPublisher<[Snippet], Never> {
-        let keys = userDefaults.dictionaryRepresentation().keys.filter { $0.contains(Constants.recentSnippetKey) }
+    internal func fetchSnippets(fetchingType: SnippetsFetchingType) -> AnyPublisher<[Snippet], Never> {
+        let fetchingKey = fetchingType == .recent ? Constants.recentSnippetKey : Constants.localSnippetKey
+        let keys = userDefaults.dictionaryRepresentation().keys.filter { $0.contains(fetchingKey) }
         
         return Future<[Snippet], Never> { [weak self] promise in
             var snippets = [Snippet]()
@@ -65,6 +68,25 @@ final class UserDefaultsServiceImpl: UserDefaultsService {
             promise(.success(snippets))
         }
         .eraseToAnyPublisher()
+    }
+    
+    // MARK: - Local snippets -
+    
+    internal func saveSnippetsLocally(_ snippets: [Snippet]) {
+        for snippet in snippets {
+            saveSnippetLocally(snippet)
+        }
+    }
+    
+    private func saveSnippetLocally(_ snippet: Snippet) {
+        let snippet = SnippetPlist(from: snippet)
+        let snippetDictonary = snippet.convertedToDictonary()
+        let snippetKey = Constants.localSnippetKey + " \(snippet.id)"
+        
+        userDefaults.set(
+            snippetDictonary,
+            forKey: snippetKey
+        )
     }
     
     // MARK: - App Group -

@@ -48,6 +48,9 @@ struct SnippetsLibraryView: View {
         .onChange(of: viewModel.snippets) { _ in
             viewModel.showSnippetPreview()
         }
+        .onChange(of: viewModel.hasConnection) {
+            viewModel.onChangeConnectionState(hasConnection: $0)
+        }
         .sheet(item: $activeSheet) {
             switch $0 {
             case let .snippetDetails(snippet, type):
@@ -75,6 +78,6 @@ struct SnippetsLibraryView: View {
 
 struct SnippetsLibraryView_Previews: PreviewProvider {
     static var previews: some View {
-        SnippetsLibraryView(viewModel: SnippetsLibraryViewModel(), activeSheet: .constant(nil))
+        SnippetsLibraryView(viewModel: SnippetsLibraryViewModel(hasConnection: .constant(true)), activeSheet: .constant(nil))
     }
 }

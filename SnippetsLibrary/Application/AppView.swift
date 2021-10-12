@@ -52,7 +52,7 @@ struct AppView: View {
         switch activeAppView {
         case .create:
             SnippetsLibraryView(
-                viewModel: SnippetsLibraryViewModel(),
+                viewModel: SnippetsLibraryViewModel(hasConnection: $networkObserver.isConnected),
                 activeSheet: $activeAppSheet
             )
             .onAppear {
@@ -65,7 +65,10 @@ struct AppView: View {
                 }
         case let .snippetsLibrary(snippetId):
             SnippetsLibraryView(
-                viewModel: SnippetsLibraryViewModel(activeSnippetId: snippetId),
+                viewModel: SnippetsLibraryViewModel(
+                    activeSnippetId: snippetId,
+                    hasConnection: $networkObserver.isConnected
+                ),
                 activeSheet: $activeAppSheet
             )
             .onAppear {

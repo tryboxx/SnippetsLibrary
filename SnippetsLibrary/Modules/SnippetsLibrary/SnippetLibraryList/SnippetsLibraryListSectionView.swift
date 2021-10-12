@@ -24,11 +24,13 @@ struct SnippetsLibraryListSectionView: View {
         Section(header: Text(snippets.first?.type.title ?? Constants.defaultSectionName)) {
             ForEach(snippets, id: \.id) {
                 SnippetListItemView(snippet: $0)
+                    #if DEBUG
                     .contextMenu {
                         Button("Delete") {
                             shouldShowRemoveAlert.toggle()
                         }
                     }
+                    #endif
             }
         }
         .tag(snippets.first?.type.rawValue ?? .zero)
