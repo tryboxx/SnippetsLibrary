@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 struct SnippetsLibraryView: View {
     
@@ -15,6 +14,7 @@ struct SnippetsLibraryView: View {
     @ObservedObject private(set) var viewModel: SnippetsLibraryViewModel
     
     @Binding internal var activeSheet: AppSheet?
+    @State private var appAlert: AppAlert? = nil
     
     // MARK: - Views
     
@@ -34,7 +34,8 @@ struct SnippetsLibraryView: View {
             SnippetsLibraryPreviewView(
                 snippets: $viewModel.snippets,
                 selectedSnippetId: $viewModel.selectedSnippetId,
-                activeSheet: $activeSheet
+                activeSheet: $activeSheet,
+                appAlert: $appAlert
             ) {
                 viewModel.saveSnippetToRecentSnippets($0)
             }
@@ -63,6 +64,16 @@ struct SnippetsLibraryView: View {
                 )
             case .snippetsUpload:
                 SnippetsUploadView(viewModel: SnippetsUploadViewModel(snippets: viewModel.snippets))
+            }
+        }
+        .alert(item: $appAlert) {
+            switch $0 {
+            case .snippetDownload:
+                return Alert(
+                    title: Text("Unexpected error"),
+                    message: Text("Unable to download the snippet. Please try again later."),
+                    dismissButton: .cancel()
+                )
             }
         }
         .makeDisplayed(

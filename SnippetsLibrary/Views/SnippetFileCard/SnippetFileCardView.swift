@@ -13,10 +13,12 @@ struct SnippetFileCardView: View {
     private enum Constants {
         static let cornerRadius: CGFloat = 4.0
         static let codeEditorHorizontalPadding: CGFloat = 1.0
-        static let codeEditorVerticlaPadding: CGFloat = 0.5
-        static let codeEditorHeight: CGFloat = Layout.defaultWindowSize.height - (Layout.largePadding * 2)
+        static let codeEditorVerticlaPadding: CGFloat = 0.0
+        static let codeEditorHeight: CGFloat = Layout.defaultWindowSize.height - (Layout.largePadding * 4)
         static let strokeWidth: CGFloat = 1.0
         static let minimalOpacity = 0.0001
+        static let bottomBarHeight: CGFloat = 20.0
+        static let bottomBarCornerRadius: CGFloat = 2.0
     }
     
     // MARK: - Stored Properties
@@ -28,9 +30,59 @@ struct SnippetFileCardView: View {
     // MARK: - Views
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(viewModel.titleText.isEmpty ? viewModel.snippet.title : viewModel.titleText)
-                .font(.headline)
+        VStack(
+            alignment: .leading,
+            spacing: .zero
+        ) {
+            HStack {
+                Text(viewModel.titleText.isEmpty ? viewModel.snippet.title : viewModel.titleText)
+                    .font(.headline)
+                
+                Spacer()
+                
+                Group {
+                    Button {
+                        viewModel.downloadSnippet()
+                    } label: {
+                        Image(systemName: "arrow.down.circle")
+                            .font(.system(size: 15, weight: .light))
+                            .opacity(Layout.largeOpacity)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .help("Download selected snippet")
+                    
+                    Button {
+                        viewModel.openSnippetDetails()
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .font(.system(size: 15, weight: .light))
+                            .opacity(Layout.largeOpacity)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .help("Show snippet details")
+                }
+            }
+            
+            HStack {
+                ForEach(
+                    viewModel.snippet.tags ?? [],
+                    id: \.self
+                ) {
+                    Text($0)
+                        .font(.footnote)
+                        .foregroundColor(Color.white)
+                        .padding(.horizontal, Layout.smallPadding / 2)
+                        .padding(.vertical, Layout.smallPadding / 4)
+                        .background(
+                            RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                                .foregroundColor(
+                                    Color.accentColor
+                                        .opacity(Layout.mediumOpacity)
+                                )
+                        )
+                }
+            }
+            .padding(.vertical, Layout.smallPadding)
             
             ZStack {
                 SourceCodeTextEditor(
@@ -45,7 +97,7 @@ struct SnippetFileCardView: View {
                     shouldBecomeFirstResponder: false
                 )
                 .frame(
-                    height: Constants.codeEditorHeight,
+                    minHeight: Constants.codeEditorHeight,
                     alignment: .leading
                 )
                 .padding(.horizontal, Constants.codeEditorHorizontalPadding)
@@ -66,18 +118,28 @@ struct SnippetFileCardView: View {
             }
             
             HStack {
-                Button(
-                    "Delete",
-                    action: { viewModel.onDelete?() }
-                )
+                Text("SwiftUI")
+                    .font(.footnote)
+                    .opacity(Layout.mediumOpacity)
+                    .padding(.leading, Layout.smallPadding)
+                
+                Divider()
                 
                 Spacer()
+                
+                Divider()
+                
+                Text("\(viewModel.linesCount()) lines")
+                    .font(.footnote)
+                    .opacity(Layout.mediumOpacity)
+                    .padding(.trailing, Layout.smallPadding)
             }
-            .padding(.vertical)
-            .makeVisible(
-                viewModel.state == .edit,
-                removed: true
+            .frame(height: Constants.bottomBarHeight)
+            .background(
+                RoundedRectangle(cornerRadius: Constants.bottomBarCornerRadius)
+                    .foregroundColor(Color("darkGrey"))
             )
+            .padding(.vertical, Layout.smallPadding)
         }
     }
     
@@ -85,6 +147,6 @@ struct SnippetFileCardView: View {
 
 struct SnippetFileCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SnippetFileCardView(viewModel: SnippetFileCardViewModel(snippet: Snippet(), state: .preview))
+        SnippetFileCardView(viewModel: SnippetFileCardViewModel(snippet: Snippet(), state: .preview, activeSheet: .constant(nil), appAlert: .constant(nil)))
     }
 }

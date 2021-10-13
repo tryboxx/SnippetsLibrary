@@ -106,6 +106,8 @@
 		B8C549BC26FFA71300720E62 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549BB26FFA71300720E62 /* AppView.swift */; };
 		B8C549C426FFBA8600720E62 /* View+Skeletonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549C326FFBA8600720E62 /* View+Skeletonable.swift */; };
 		B8C8755926FD2AB600DE4474 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B88D4A3526F4E34900164BF5 /* GoogleService-Info.plist */; };
+		B8CB01072716613F00D3A6DD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CB01062716613F00D3A6DD /* String+Extensions.swift */; };
+		B8CB01092716681700D3A6DD /* AppAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CB01082716681700D3A6DD /* AppAlert.swift */; };
 		B8CE1CAB26FD4193004AD5D5 /* DisabledCommandGroupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE1CAA26FD4193004AD5D5 /* DisabledCommandGroupButton.swift */; };
 		B8CE1CAE26FD431E004AD5D5 /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE1CAD26FD431E004AD5D5 /* URLFactory.swift */; };
 		B8CE1CB026FD43B5004AD5D5 /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE1CAF26FD43B5004AD5D5 /* URLType.swift */; };
@@ -259,6 +261,8 @@
 		B8C549B926FF9C0800720E62 /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
 		B8C549BB26FFA71300720E62 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		B8C549C326FFBA8600720E62 /* View+Skeletonable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Skeletonable.swift"; sourceTree = "<group>"; };
+		B8CB01062716613F00D3A6DD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		B8CB01082716681700D3A6DD /* AppAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlert.swift; sourceTree = "<group>"; };
 		B8CE1CAA26FD4193004AD5D5 /* DisabledCommandGroupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledCommandGroupButton.swift; sourceTree = "<group>"; };
 		B8CE1CAD26FD431E004AD5D5 /* URLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
 		B8CE1CAF26FD43B5004AD5D5 /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
@@ -472,6 +476,7 @@
 				B82561EC26E8C89A0040A67E /* AppSheet.swift */,
 				B8C549BB26FFA71300720E62 /* AppView.swift */,
 				B85AC92D2702153E00A008A6 /* AppMenu.swift */,
+				B8CB01082716681700D3A6DD /* AppAlert.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -523,6 +528,7 @@
 				B85AC92F2702158300A008A6 /* AppDelegate+NSMenuDelegate.swift */,
 				B81B0876270232B600E59F86 /* NSNotification+Name.swift */,
 				B81B0878270245CE00E59F86 /* AppMenu+HideWindow.swift */,
+				B8CB01062716613F00D3A6DD /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1015,6 +1021,7 @@
 				B8EB5ADB26F0076C00BE3EF6 /* PlistCodingKeys.swift in Sources */,
 				B82B5586270007C500DE4766 /* DatabaseReference+Timeout.swift in Sources */,
 				B82B55822700014600DE4766 /* StartView+Equatable.swift in Sources */,
+				B8CB01092716681700D3A6DD /* AppAlert.swift in Sources */,
 				B88D7A6126F797F000B114F6 /* UserDefaultsService.swift in Sources */,
 				B82B55802700011000DE4766 /* SnippetsLibraryView+Equatable.swift in Sources */,
 				B82561EB26E8C7F00040A67E /* SnippetsLibraryViewModel.swift in Sources */,
@@ -1079,6 +1086,7 @@
 				B88BB45626F55DDB00747631 /* LogsService.swift in Sources */,
 				B88D7A6326F7A5C000B114F6 /* SnippetPlist+Dictonary.swift in Sources */,
 				B832886D27160F17006BD465 /* SnippetsFetchingType.swift in Sources */,
+				B8CB01072716613F00D3A6DD /* String+Extensions.swift in Sources */,
 				B8546F3C27077C310043A99F /* SnippetsLibraryListViewModel.swift in Sources */,
 				B8CE1CAB26FD4193004AD5D5 /* DisabledCommandGroupButton.swift in Sources */,
 				B85D1A9D26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift in Sources */,
