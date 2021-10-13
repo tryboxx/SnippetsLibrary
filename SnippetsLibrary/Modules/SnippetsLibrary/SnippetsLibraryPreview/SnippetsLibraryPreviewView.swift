@@ -14,43 +14,50 @@ struct SnippetsLibraryPreviewView: View {
     @Binding internal var snippets: [Snippet]
     @Binding internal var selectedSnippetId: SnippetId?
     @Binding internal var activeSheet: AppSheet?
+    @Binding internal var appAlert: AppAlert?
     
     private(set) var onTap: (_ snippet: Snippet) -> Void
     
     // MARK: - Views
     
     var body: some View {
-        VStack {
-            VStack {
-                Spacer()
-                
-                Text("Tap the snippet on the left to preview")
-                    .font(.system(size: 17.0))
-                    .foregroundColor(
-                        Color.primary
-                            .opacity(Layout.mediumOpacity)
-                    )
+        VStack(spacing: .zero) {
+            Spacer()
+                .makeVisible(
+                    selectedSnippetId == nil,
+                    removed: true
+                )
+            
+            Text("Tap the snippet on the left to preview")
+                .font(.system(size: 17.0))
+                .foregroundColor(
+                    Color.primary
+                        .opacity(Layout.mediumOpacity)
+                )
+                .makeVisible(
+                    selectedSnippetId == nil,
+                    removed: true
+                )
+            
+            SnippetFileCardView(
+                viewModel: SnippetFileCardViewModel(
+                    snippet: snippets.first(where: { $0.id == selectedSnippetId }),
+                    state: .preview,
+                    activeSheet: $activeSheet,
+                    appAlert: $appAlert
+                )
+            )
+            .padding()
+            .onTapGesture {
+                guard let snippet = snippets.first(where: { $0.id == selectedSnippetId }) else { return }
+                activeSheet = .snippetDetails(snippet, .edit)
+                onTap(snippet)
             }
             .makeVisible(
-                selectedSnippetId == nil,
+                selectedSnippetId != nil,
                 removed: true
             )
-            
-            List(snippets.filter({ $0.id == selectedSnippetId })) {
-                SnippetFileCardView(
-                    viewModel: SnippetFileCardViewModel(
-                        snippet: $0,
-                        state: .preview
-                    )
-                )
-                .onTapGesture {
-                    guard let snippet = snippets.first(where: { $0.id == selectedSnippetId }) else { return }
-                    activeSheet = .snippetDetails(snippet, .edit)
-                    onTap(snippet)
-                }
-            }
-            .makeVisible(selectedSnippetId != nil)
-            
+
             Spacer()
         }
         .frame(minWidth: Layout.defaultWindowSize.width * 0.65)

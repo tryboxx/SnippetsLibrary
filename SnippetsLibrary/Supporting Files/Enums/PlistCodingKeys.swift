@@ -19,4 +19,5 @@ enum PlistCodingKeys: String, CodingKey {
     case userSnippet = "IDECodeSnippetUserSnippet"
     case version = "IDECodeSnippetVersion"
     case author = "IDECodeSnippetAuthor"
+    case tags = "IDECodeSnippetTags"
 }

@@ -21,6 +21,7 @@ struct Snippet: Codable, Identifiable, Hashable {
     var completion: String
     var platform: SnippetPlatform
     var availability: SnippetAvailability
+    var tags: [String]?
     
     // MARK: - Computed Properties
     
@@ -35,7 +36,7 @@ struct Snippet: Codable, Identifiable, Hashable {
     // MARK: - CodingKeys
     
     enum CodingKeys: String, CodingKey {
-        case id, title, summary, content, author, completion, platform, availability
+        case id, title, summary, content, author, completion, platform, availability, tags
     }
     
     // MARK: - Initialization
@@ -70,7 +71,8 @@ struct Snippet: Codable, Identifiable, Hashable {
         author: String,
         completion: String,
         platform: SnippetPlatform,
-        availability: SnippetAvailability
+        availability: SnippetAvailability,
+        tags: [String] = []
     ) {
         self.id = id
         self.title = title
@@ -80,6 +82,7 @@ struct Snippet: Codable, Identifiable, Hashable {
         self.completion = completion
         self.platform = platform
         self.availability = availability
+        self.tags = tags
     }
     
     init(from snippetPlist: SnippetPlist) {
@@ -91,6 +94,7 @@ struct Snippet: Codable, Identifiable, Hashable {
         completion = snippetPlist.completion
         platform = SnippetPlatform.allCases.first(where: { $0.rawValue == snippetPlist.platform }) ?? SnippetPlatform.all
         availability = SnippetAvailability.allCases.first(where: { $0.string == snippetPlist.availability.first }) ?? SnippetAvailability.allScopes
+        tags = []
     }
     
     init(from decoder: Decoder) throws {
@@ -107,6 +111,7 @@ struct Snippet: Codable, Identifiable, Hashable {
         
         let availabilityName = try values.decode([String].self, forKey: .availability)
         availability = SnippetAvailability.allCases.first { $0.string == availabilityName.first } ?? .allScopes
+        tags = try? values.decode([String].self, forKey: .tags)
     }
     
     // MARK: - Methods
@@ -121,6 +126,7 @@ struct Snippet: Codable, Identifiable, Hashable {
         try container.encode(completion, forKey: .completion)
         try container.encode(platform.title, forKey: .platform)
         try container.encode(availability.title, forKey: .availability)
+        try? container.encode(tags, forKey: .tags)
     }
     
 }

@@ -34,20 +34,26 @@ struct SnippetsLibraryListView: View {
                 } label: {
                     Image(systemName: "line.horizontal.3.decrease.circle")
                         .font(.system(size: 15, weight: .light))
-                        .foregroundColor(Color.primary.opacity(Layout.mediumOpacity))
+                        .foregroundColor(
+                            Color.primary
+                                .opacity(Layout.mediumOpacity)
+                        )
                 }
                 .buttonStyle(PlainButtonStyle())
-                .help("Choose the filters.")
+                .help("Choose the filters")
                 
                 Button {
                     viewModel.onReload()
                 } label: {
-                    Image(systemName: "arrow.down.circle")
+                    Image(systemName: "arrow.counterclockwise.circle")
                         .font(.system(size: 15, weight: .light))
-                        .foregroundColor(Color.primary.opacity(Layout.mediumOpacity))
+                        .foregroundColor(
+                            Color.primary
+                                .opacity(Layout.mediumOpacity)
+                        )
                 }
                 .buttonStyle(PlainButtonStyle())
-                .help("Pull all changes from remote.")
+                .help("Pull all changes from remote")
                 .padding(.trailing, Layout.smallPadding)
             }
             .padding(.top, Layout.largePadding)
