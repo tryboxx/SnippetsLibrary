@@ -114,6 +114,7 @@
 		B8CE1CB826FF965D004AD5D5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CE1CB726FF965D004AD5D5 /* NetworkService.swift */; };
 		B8CFD8B42700D6A7002A66FF /* SnippetsUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CFD8B32700D6A7002A66FF /* SnippetsUploadView.swift */; };
 		B8CFD8B72700D717002A66FF /* SnippetsUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CFD8B62700D717002A66FF /* SnippetsUploadViewModel.swift */; };
+		B8D5F1EF2718895E00D8C3C4 /* SnippetWriteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D5F1EE2718895E00D8C3C4 /* SnippetWriteType.swift */; };
 		B8EB5AD526F005CC00BE3EF6 /* CustomCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB5AD426F005CC00BE3EF6 /* CustomCodeTheme.swift */; };
 		B8EB5AD926F0061A00BE3EF6 /* SnippetFileCardViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB5AD826F0061A00BE3EF6 /* SnippetFileCardViewState.swift */; };
 		B8EB5ADB26F0076C00BE3EF6 /* PlistCodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB5ADA26F0076C00BE3EF6 /* PlistCodingKeys.swift */; };
@@ -269,6 +270,7 @@
 		B8CE1CB726FF965D004AD5D5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B8CFD8B32700D6A7002A66FF /* SnippetsUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsUploadView.swift; sourceTree = "<group>"; };
 		B8CFD8B62700D717002A66FF /* SnippetsUploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsUploadViewModel.swift; sourceTree = "<group>"; };
+		B8D5F1EE2718895E00D8C3C4 /* SnippetWriteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetWriteType.swift; sourceTree = "<group>"; };
 		B8EB5AD426F005CC00BE3EF6 /* CustomCodeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCodeTheme.swift; sourceTree = "<group>"; };
 		B8EB5AD826F0061A00BE3EF6 /* SnippetFileCardViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetFileCardViewState.swift; sourceTree = "<group>"; };
 		B8EB5ADA26F0076C00BE3EF6 /* PlistCodingKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistCodingKeys.swift; sourceTree = "<group>"; };
@@ -731,6 +733,7 @@
 				B81B087A2702468C00E59F86 /* FileStatusCardType.swift */,
 				B8546F37270771020043A99F /* SnippetCategory.swift */,
 				B832886C27160F17006BD465 /* SnippetsFetchingType.swift */,
+				B8D5F1EE2718895E00D8C3C4 /* SnippetWriteType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1089,6 +1092,7 @@
 				B8CB01072716613F00D3A6DD /* String+Extensions.swift in Sources */,
 				B8546F3C27077C310043A99F /* SnippetsLibraryListViewModel.swift in Sources */,
 				B8CE1CAB26FD4193004AD5D5 /* DisabledCommandGroupButton.swift in Sources */,
+				B8D5F1EF2718895E00D8C3C4 /* SnippetWriteType.swift in Sources */,
 				B85D1A9D26FA8EA50053FF3C /* SnippetsLibraryListSectionView.swift in Sources */,
 				B82561E626E8C5490040A67E /* Mocks.swift in Sources */,
 			);

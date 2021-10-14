@@ -137,7 +137,7 @@ struct SnippetFileCardView: View {
             .frame(height: Constants.bottomBarHeight)
             .background(
                 RoundedRectangle(cornerRadius: Constants.bottomBarCornerRadius)
-                    .foregroundColor(Color("darkGrey"))
+                    .foregroundColor(Color("skeletonLight"))
             )
             .padding(.vertical, Layout.smallPadding)
         }

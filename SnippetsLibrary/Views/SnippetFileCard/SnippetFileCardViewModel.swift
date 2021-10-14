@@ -19,6 +19,8 @@ final class SnippetFileCardViewModel: ObservableObject {
     @Binding internal var appAlert: AppAlert?
     @Binding internal var activeSheet: AppSheet?
     
+    private let snippetParserService: SnippetsParserService
+    
     private(set) var onDelete: (() -> Void)? = nil
     
     // MARK: - Initialization
@@ -28,12 +30,14 @@ final class SnippetFileCardViewModel: ObservableObject {
         state: SnippetFileCardViewState,
         activeSheet: Binding<AppSheet?>,
         appAlert: Binding<AppAlert?>,
+        snippetParserService: SnippetsParserService = DIContainer.snippetsParserService,
         onDelete: (() -> Void)? = nil
     ) {
         self.snippet = snippet ?? Snippet()
         self.state = state
-        self._activeSheet = activeSheet
-        self._appAlert = appAlert
+        _activeSheet = activeSheet
+        _appAlert = appAlert
+        self.snippetParserService = snippetParserService
         self.onDelete = onDelete
         
         setup()
@@ -42,31 +46,11 @@ final class SnippetFileCardViewModel: ObservableObject {
     // MARK: - Methods
     
     internal func downloadSnippet() {
-        let encoder = PropertyListEncoder()
-        encoder.outputFormat = .xml
-        
-        let directoryURLs = FileManager.default.urls(
-            for: .downloadsDirectory,
-            in: .userDomainMask
-        )
-        
-        guard
-            let containerDirectoryURL = directoryURLs.first,
-            let userDirectory = containerDirectoryURL.absoluteString.components(separatedBy: "Library/").first,
-            let snippetDownloadDirectory = snippetDownloadDirectoryURL(with: userDirectory)
-        else {
-            return
-        }
-        
-        DispatchQueue.main.async {
-            do {
-                let plistSnippet = SnippetPlist(from: self.snippet)
-                let data = try encoder.encode(plistSnippet)
-                let filePath = snippetDownloadDirectory.appendingPathComponent("\(self.snippet.id).codesnippet")
-                try data.write(to: filePath, options: .atomic)
-            } catch {
-                self.appAlert = .snippetDownload
-            }
+        snippetParserService.writeToPath(
+            type: .download,
+            snippets: [snippet]
+        ) {
+            self.appAlert = .snippetDownload
         }
     }
     
@@ -76,24 +60,6 @@ final class SnippetFileCardViewModel: ObservableObject {
     
     internal func openSnippetDetails() {
         activeSheet = .snippetDetails(snippet, .edit)
-    }
-    
-    private func snippetDownloadDirectoryURL(with userDirectory: String) -> URL? {
-        let openPanel = NSOpenPanel()
-        openPanel.message = "Where do you want to save the snippet?"
-        openPanel.prompt = "Confirm"
-        openPanel.allowedFileTypes = ["none"]
-        openPanel.allowsOtherFileTypes = false
-        openPanel.canChooseFiles = false
-        openPanel.canChooseDirectories = true
-        openPanel.directoryURL = URL(string: "\(userDirectory)Downloads")
-
-        let response = openPanel.runModal()
-        if response != .OK {
-            return nil
-        } else {
-            return openPanel.urls.first
-        }
     }
     
     private func setup() {

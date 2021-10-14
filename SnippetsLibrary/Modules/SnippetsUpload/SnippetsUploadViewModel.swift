@@ -10,83 +10,54 @@ import Combine
 
 final class SnippetsUploadViewModel: ObservableObject {
     
+    private enum Constants {
+        static let midValue: CGFloat = 0.5
+        static let fullValue: CGFloat = 1.0
+    }
+    
     // MARK: - Stored Properties
     
     private(set) var snippets: [Snippet]
     
-    @Published internal var progressValue: CGFloat = 0.0
+    @Published internal var progressValue: CGFloat = .zero
     @Published private(set) var shouldDismissView = false
     @Published internal var uploadingStatus: UploadingStatus = .initializing
+    
+    private let snippetsParserService: SnippetsParserService
     
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - Initialization
     
-    init(snippets: [Snippet]) {
+    init(
+        snippets: [Snippet],
+        snippetsParserService: SnippetsParserService = DIContainer.snippetsParserService
+    ) {
         self.snippets = snippets
+        self.snippetsParserService = snippetsParserService
     }
     
     // MARK: - Methods
     
     internal func uploadSnippetsToXcode() {
-        let fileManager = FileManager.default
-        let encoder = PropertyListEncoder()
-        encoder.outputFormat = .xml
-        
-        let directoryURLs = fileManager.urls(
-            for: .libraryDirectory,
-            in: .userDomainMask
-        )
-        
-        guard
-            let containerDirectoryURL = directoryURLs.first,
-            let libraryDirectory = containerDirectoryURL.absoluteString.components(separatedBy: "Containers/").first,
-            let xcodeUserSnippetsDirectory = xcodeUserSnippetsDirectoryURL(with: libraryDirectory)
-        else {
-            uploadingStatus = .error
-            return
-        }
-        
-        for (index, snippet) in snippets.enumerated() {
-            uploadingStatus = .uploading
-
-            DispatchQueue.main.async {
-                self.progressValue = CGFloat(index + 1) / CGFloat(self.snippets.count)
+        snippetsParserService.writeToPath(
+            type: .uploadToXcode,
+            snippets: snippets
+        ) {
+            self.uploadingStatus = .uploading
+            self.progressValue = Constants.midValue
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.midValue) {
+                self.progressValue = Constants.fullValue
+                self.finishUpload()
             }
-            do {
-                let plistSnippet = SnippetPlist(from: snippet)
-                let data = try encoder.encode(plistSnippet)
-                let filePath = xcodeUserSnippetsDirectory.appendingPathComponent("\(snippet.id).codesnippet")
-                try data.write(to: filePath, options: [])
-            } catch {
-                self.uploadingStatus = .error
-            }
-        }
-
-        guard uploadingStatus != .error else { return }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.progressValue = 1.0
-            self.uploadingStatus = .done
+        } onError: {
+            self.uploadingStatus = .error
         }
     }
     
-    private func xcodeUserSnippetsDirectoryURL(with libraryDirectory: String) -> URL? {
-        let openPanel = NSOpenPanel()
-        openPanel.message = "Confirm Xcode user snippets directory"
-        openPanel.prompt = "Confirm"
-        openPanel.allowedFileTypes = ["none"]
-        openPanel.allowsOtherFileTypes = false
-        openPanel.canChooseFiles = false
-        openPanel.canChooseDirectories = true
-        openPanel.directoryURL = URL(string: "\(libraryDirectory)Developer/Xcode/UserData/CodeSnippets")
-
-        let response = openPanel.runModal()
-        if response != .OK {
-            uploadingStatus = .error
-            return nil
-        } else {
-            return openPanel.urls.first
+    private func finishUpload() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.fullValue) {
+            self.uploadingStatus = .done
         }
     }
     
