@@ -9,7 +9,7 @@
 
 <br />
 
-[**SnippetsLibrary 1.0 is now available!**](https://apps.apple.com/pl/app/snippets-library/id1585687204?mt=12)
+[**SnippetsLibrary 1.0.1 is now available!**](https://apps.apple.com/pl/app/snippets-library/id1585687204?mt=12)
 
 SnippetsLibrary is a helpful tool for SwiftUI developers to help with their daily coding life. SnippetsLibrary contains all the needed code snippets for you to view, edit, or add more and more. This will make your daily work easier and faster.
 
