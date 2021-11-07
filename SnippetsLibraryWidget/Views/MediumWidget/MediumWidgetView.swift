@@ -27,7 +27,7 @@ struct MediumWidgetView: View {
                     Spacer()
                     
                     Rectangle()
-                        .foregroundColor(Color("widgetBackground"))
+                        .foregroundColor(Color("defaultBackground"))
                         .frame(width: geometry.size.width / 2)
                 }
                 

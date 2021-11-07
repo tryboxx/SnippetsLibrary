@@ -14,6 +14,9 @@ protocol UserDefaultsService {
     func saveSnippetsLocally(_ snippets: [Snippet])
     
     func fetchRecentSnippetsFromAppGroup() -> [Snippet]
+    
+    func shouldShowSnippetManual() -> Bool
+    func markSnippetManualAsReaded()
 }
 
 final class UserDefaultsServiceImpl: UserDefaultsService {
@@ -22,6 +25,7 @@ final class UserDefaultsServiceImpl: UserDefaultsService {
         static let recentSnippetKey = "RecentSnippet"
         static let localSnippetKey = "LocalSnippet"
         static let appGroupName = "group.com.cphlowiec.SnippetsLibrary"
+        static let snippetManualKey = "wasSnippetManualReaded"
     }
     
     // MARK: - Stored Properties
@@ -119,6 +123,20 @@ final class UserDefaultsServiceImpl: UserDefaultsService {
         userDefaults.set(
             snippetDictonary,
             forKey: key
+        )
+    }
+    
+    // MARK: - Snippet Manual
+    
+    internal func shouldShowSnippetManual() -> Bool {
+        let wasSnippetsManualReaded = userDefaults.bool(forKey: Constants.snippetManualKey)
+        return !wasSnippetsManualReaded
+    }
+    
+    internal func markSnippetManualAsReaded() {
+        userDefaults.set(
+            true,
+            forKey: Constants.snippetManualKey
         )
     }
     

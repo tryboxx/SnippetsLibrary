@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct SnippetsLibraryView: View {
     
@@ -15,29 +16,32 @@ struct SnippetsLibraryView: View {
     
     @Binding internal var activeSheet: AppSheet?
     @State private var appAlert: AppAlert? = nil
+    @State private var shouldShowSnippetManual = false
     
     // MARK: - Views
     
     var body: some View {
-        HSplitView {
-            SnippetsLibraryListView(
-                viewModel: SnippetsLibraryListViewModel(
+        ZStack {
+            HSplitView {
+                SnippetsLibraryListView(
+                    viewModel: SnippetsLibraryListViewModel(
+                        snippets: $viewModel.snippets,
+                        selectedSnippetId: $viewModel.selectedSnippetId
+                    ) {
+                        viewModel.fetchSnippets()
+                    } onRemove: {
+                        viewModel.onRemove($0)
+                    }
+                )
+                
+                SnippetsLibraryPreviewView(
                     snippets: $viewModel.snippets,
-                    selectedSnippetId: $viewModel.selectedSnippetId
+                    selectedSnippetId: $viewModel.selectedSnippetId,
+                    activeSheet: $activeSheet,
+                    appAlert: $appAlert
                 ) {
-                    viewModel.fetchSnippets()
-                } onRemove: {
-                    viewModel.onRemove($0)
+                    viewModel.saveSnippetToRecentSnippets($0)
                 }
-            )
-            
-            SnippetsLibraryPreviewView(
-                snippets: $viewModel.snippets,
-                selectedSnippetId: $viewModel.selectedSnippetId,
-                activeSheet: $activeSheet,
-                appAlert: $appAlert
-            ) {
-                viewModel.saveSnippetToRecentSnippets($0)
             }
         }
         .frame(
@@ -83,6 +87,28 @@ struct SnippetsLibraryView: View {
             subtitle: "Requested operation couldn't be completed",
             state: .failure
         )
+        .popup(
+            isPresented: $shouldShowSnippetManual,
+            type: .floater(verticalPadding: Layout.defaultWindowSize.height),
+            position: .bottom,
+            animation: .easeInOut,
+            closeOnTapOutside: true,
+            backgroundColor: Color.black.opacity(Layout.mediumOpacity)
+        ) {
+            viewModel.markSnippetManualAsReaded()
+        } view: {
+            SnippetCreationManualView()
+        }
+        .onAppear {
+            showSnippetManualIfNeeded()
+        }
+    }
+    
+    // MARK: - Methods
+    
+    private func showSnippetManualIfNeeded() {
+        let userDefaultsService = DIContainer.userDefaultsService
+        shouldShowSnippetManual = userDefaultsService.shouldShowSnippetManual()
     }
 
 }

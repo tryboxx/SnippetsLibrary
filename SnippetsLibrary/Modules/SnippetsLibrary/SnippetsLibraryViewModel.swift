@@ -88,6 +88,10 @@ final class SnippetsLibraryViewModel: ObservableObject {
         }
     }
     
+    internal func markSnippetManualAsReaded() {
+        userDefaultsService.markSnippetManualAsReaded()
+    }
+    
     private func fetchLocalSnippets() {
         userDefaultsService.fetchSnippets(fetchingType: .local)
             .receive(on: DispatchQueue.main)
