@@ -129,6 +129,8 @@
 		B8F95B0926EEAF4D00335D77 /* SnippetImportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F95B0826EEAF4D00335D77 /* SnippetImportViewModel.swift */; };
 		B8F9CA982700F7F40041CE3E /* DisabledCommandGroupButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9CA972700F7F40041CE3E /* DisabledCommandGroupButtonType.swift */; };
 		B8F9CA9A2700F80E0041CE3E /* UploadingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9CA992700F80E0041CE3E /* UploadingStatus.swift */; };
+		B8FC70E327335DF80090292C /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = B8FC70E227335DF80090292C /* PopupView */; };
+		B8FC70E5273361BD0090292C /* SnippetCreationManualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FC70E4273361BD0090292C /* SnippetCreationManualView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,6 +286,7 @@
 		B8F95B0826EEAF4D00335D77 /* SnippetImportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetImportViewModel.swift; sourceTree = "<group>"; };
 		B8F9CA972700F7F40041CE3E /* DisabledCommandGroupButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledCommandGroupButtonType.swift; sourceTree = "<group>"; };
 		B8F9CA992700F80E0041CE3E /* UploadingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingStatus.swift; sourceTree = "<group>"; };
+		B8FC70E4273361BD0090292C /* SnippetCreationManualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetCreationManualView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +305,7 @@
 			files = (
 				B8C1F6C6270E13E60088E5B5 /* FirebaseCrashlytics in Frameworks */,
 				B8C1F6C0270E13BA0088E5B5 /* Sourceful in Frameworks */,
+				B8FC70E327335DF80090292C /* PopupView in Frameworks */,
 				B8C1F6C8270E13E60088E5B5 /* FirebaseDatabase in Frameworks */,
 				B8C1F6C3270E13C30088E5B5 /* SwiftUISkeleton in Frameworks */,
 			);
@@ -508,6 +512,7 @@
 				B8CE1CAA26FD4193004AD5D5 /* DisabledCommandGroupButton.swift */,
 				B8BEF5A826FFBF7E0098A778 /* ToastView.swift */,
 				B8BEF5AC26FFEB600098A778 /* EmptySnippetsListView.swift */,
+				B8FC70E4273361BD0090292C /* SnippetCreationManualView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -821,6 +826,7 @@
 				B8C1F6C2270E13C30088E5B5 /* SwiftUISkeleton */,
 				B8C1F6C5270E13E60088E5B5 /* FirebaseCrashlytics */,
 				B8C1F6C7270E13E60088E5B5 /* FirebaseDatabase */,
+				B8FC70E227335DF80090292C /* PopupView */,
 			);
 			productName = SnippetsLibrary;
 			productReference = B82561B026E81D570040A67E /* Snippets Library.app */;
@@ -900,6 +906,7 @@
 				B8C1F6BE270E13BA0088E5B5 /* XCRemoteSwiftPackageReference "Sourceful" */,
 				B8C1F6C1270E13C30088E5B5 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */,
 				B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B8FC70E127335DF80090292C /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = B82561B126E81D570040A67E /* Products */;
 			projectDirPath = "";
@@ -1058,6 +1065,7 @@
 				B82561E926E8C7D60040A67E /* SnippetsLibraryView.swift in Sources */,
 				B85AC934270215ED00A008A6 /* StatusViewModel.swift in Sources */,
 				B85AC9302702158300A008A6 /* AppDelegate+NSMenuDelegate.swift in Sources */,
+				B8FC70E5273361BD0090292C /* SnippetCreationManualView.swift in Sources */,
 				B8546F3A270773FE0043A99F /* SnippetsLibraryListFilterView.swift in Sources */,
 				B8EB5ADF26F00A4A00BE3EF6 /* SnippetDetailsViewType.swift in Sources */,
 				B84BFEA926F57018007E5109 /* System.swift in Sources */,
@@ -1158,6 +1166,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cphlowiec.SnippetsLibrary.SnippetsLibraryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1190,6 +1199,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cphlowiec.SnippetsLibrary.SnippetsLibraryWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1318,8 +1328,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SnippetsLibrary/SnippetsLibraryDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1336,7 +1346,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cphlowiec.SnippetsLibrary;
 				PRODUCT_NAME = "Snippets Library";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "SnippetsLibrary Development";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1348,8 +1358,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SnippetsLibrary/SnippetsLibrary.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1366,7 +1376,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cphlowiec.SnippetsLibrary;
 				PRODUCT_NAME = "Snippets Library";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "SnippetsLibrary Development";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1527,6 +1537,14 @@
 				kind = branch;
 			};
 		};
+		B8FC70E127335DF80090292C /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1549,6 +1567,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		B8FC70E227335DF80090292C /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8FC70E127335DF80090292C /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
