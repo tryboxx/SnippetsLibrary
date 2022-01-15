@@ -13,13 +13,19 @@ protocol DatabaseService {
     func fetchSnippets() -> AnyPublisher<[Snippet], DatabaseError>
     func updateSnippet(_ snippet: Snippet) -> AnyPublisher<Void, DatabaseError>
     func removeSnippet(_ snippet: Snippet) -> AnyPublisher<Void, DatabaseError>
+    
+    var snippets: Published<[Snippet]>.Publisher { get }
 }
 
 final class DatabaseServiceImpl: DatabaseService {
     
     // MARK: - Stored Properties
     
+    @Published var snippetsValue: [Snippet] = []
+    var snippets: Published<[Snippet]>.Publisher { $snippetsValue }
+    
     private let ref = Database.database().reference()
+    
     private let logsService: LogsService
     private let crashlyticsService: CrashlyticsService
     
@@ -31,11 +37,13 @@ final class DatabaseServiceImpl: DatabaseService {
     ) {
         self.logsService = logsService
         self.crashlyticsService = crashlyticsService
+        
+        observeSnippets()
     }
     
     // MARK: - Methods
     
-    internal func saveSnippet(_ snippet: SnippetPlist) -> AnyPublisher<Void, DatabaseError> {
+    func saveSnippet(_ snippet: SnippetPlist) -> AnyPublisher<Void, DatabaseError> {
         guard let childKey = ref.child("snippets").childByAutoId().key else {
             return Fail(error: .unableToRetrieveKeyForChild)
                 .eraseToAnyPublisher()
@@ -58,7 +66,7 @@ final class DatabaseServiceImpl: DatabaseService {
         .eraseToAnyPublisher()
     }
     
-    internal func fetchSnippets() -> AnyPublisher<[Snippet], DatabaseError> {
+    func fetchSnippets() -> AnyPublisher<[Snippet], DatabaseError> {
         return Future<[Snippet], DatabaseError> { [weak self] promise in
             _ = self?.ref.child("snippets").observe(.value, timeout: 5) {
                 guard let snapshot = $0 else {
@@ -66,25 +74,12 @@ final class DatabaseServiceImpl: DatabaseService {
                     return
                 }
                 
-                guard let results = snapshot.value as? NSDictionary else {
+                guard
+                    let results = snapshot.value as? NSDictionary,
+                    let snippets = self?.parsedSnippets(from: results)
+                else {
                     promise(.failure(.unableToFetchData))
                     return
-                }
-                
-                var snippets: [Snippet] = []
-                
-                for (_, value) in results {
-                    guard let values = value as? NSDictionary else {
-                        promise(.failure(.unableToFetchData))
-                        return
-                    }
-                    
-                    if let data = try? JSONSerialization.data(withJSONObject: values, options: []),
-                       let snippet = try? JSONDecoder().decode(SnippetPlist.self, from: data) {
-                        snippets.append(Snippet(from: snippet))
-                    } else {
-                        promise(.failure(.unableToDecodeSnippet))
-                    }
                 }
                 
                 self?.backupSnippets(snippets.compactMap { SnippetPlist(from: $0) })
@@ -94,7 +89,7 @@ final class DatabaseServiceImpl: DatabaseService {
         .eraseToAnyPublisher()
     }
     
-    internal func updateSnippet(_ snippet: Snippet) -> AnyPublisher<Void, DatabaseError> {
+    func updateSnippet(_ snippet: Snippet) -> AnyPublisher<Void, DatabaseError> {
         let snippet = SnippetPlist(from: snippet)
         let values = snippet.convertedToDictonary()
         
@@ -113,7 +108,7 @@ final class DatabaseServiceImpl: DatabaseService {
         .eraseToAnyPublisher()
     }
     
-    internal func removeSnippet(_ snippet: Snippet) -> AnyPublisher<Void, DatabaseError> {
+    func removeSnippet(_ snippet: Snippet) -> AnyPublisher<Void, DatabaseError> {
         return Future<Void, DatabaseError> { [weak self] promise in
             self?.ref.child("snippets").child(snippet.id).removeValue() { (error, _) in
                 guard error == nil else {
@@ -127,6 +122,31 @@ final class DatabaseServiceImpl: DatabaseService {
             }
         }
         .eraseToAnyPublisher()
+    }
+    
+    private func observeSnippets() {
+        _ = ref.child("snippets").observe(.value) {
+            guard let results = $0.value as? NSDictionary else { return }
+            
+            let snippets = self.parsedSnippets(from: results)
+            self.backupSnippets(snippets.compactMap { SnippetPlist(from: $0) })
+            self.snippetsValue = snippets
+        }
+    }
+    
+    private func parsedSnippets(from results: NSDictionary) -> [Snippet] {
+        var snippets: [Snippet] = []
+        
+        for (_, value) in results {
+            guard let values = value as? NSDictionary else { return [] }
+            
+            if let data = try? JSONSerialization.data(withJSONObject: values, options: []),
+               let snippet = try? JSONDecoder().decode(SnippetPlist.self, from: data) {
+                snippets.append(Snippet(from: snippet))
+            }
+        }
+        
+        return snippets
     }
     
     private func backupSnippets(_ snippets: [SnippetPlist]) {

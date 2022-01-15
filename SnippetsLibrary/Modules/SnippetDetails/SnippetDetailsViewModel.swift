@@ -12,20 +12,20 @@ final class SnippetDetailsViewModel: ObservableObject {
     
     // MARK: - Stored Properties
     
-    @Published internal var snippet: Snippet
-    @Binding internal var activeAppView: ActiveAppView?
+    @Published var snippet: Snippet
+    @Binding private(set) var activeAppView: ActiveAppView?
 
-    internal let type: SnippetDetailsViewType
+    let type: SnippetDetailsViewType
     private var lastSavedSnippet: Snippet? = nil
     
-    @Published internal var platformSelectionIndex: Int = 0
-    internal var platforms = SnippetPlatform.allCases
+    @Published var platformSelectionIndex = 0
+    let platforms = SnippetPlatform.allCases
     
-    @Published internal var availabilitySelectionIndex: Int = 0
-    internal var availabilities = SnippetAvailability.allCases
+    @Published var availabilitySelectionIndex = 0
+    let availabilities = SnippetAvailability.allCases
     
     @Published private(set) var shouldDismissView = false
-    @Published internal var shouldShowErrorAlert = false
+    @Published var shouldShowErrorAlert = false
     
     private let snippetsParserService: SnippetsParserService
     private let databaseService: DatabaseService
@@ -34,8 +34,10 @@ final class SnippetDetailsViewModel: ObservableObject {
     
     // MARK: - Computed Properties
     
-    internal var hasChanges: Bool {
-        lastSavedSnippet != snippet
+    var hasChanges: Bool {
+        lastSavedSnippet != snippet && !snippet.title.isEmpty &&
+        !snippet.summary.isEmpty && !snippet.content.isEmpty &&
+        !snippet.completion.isEmpty
     }
     
     // MARK: - Initialization
@@ -58,7 +60,7 @@ final class SnippetDetailsViewModel: ObservableObject {
     
     // MARK: - Methods
     
-    internal func performChanges() {
+    func performChanges() {
         guard hasChanges else { return }
         
         if type == .create {
