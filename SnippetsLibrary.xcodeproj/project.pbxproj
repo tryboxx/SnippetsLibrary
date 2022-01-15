@@ -32,6 +32,11 @@
 		B80D24B2270A72ED0057582F /* SnippetsLibraryWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80D24B0270A72CC0057582F /* SnippetsLibraryWidgetView.swift */; };
 		B80D24B6270A734E0057582F /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80D24B4270A73490057582F /* WidgetEntry.swift */; };
 		B80D24B8270A739F0057582F /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80D24B7270A739F0057582F /* Provider.swift */; };
+		B816C71A275817EA00680174 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B816C719275817EA00680174 /* FirebaseAnalytics */; };
+		B816C71C275817EA00680174 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B816C71B275817EA00680174 /* FirebaseCrashlytics */; };
+		B816C71E275817EA00680174 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B816C71D275817EA00680174 /* FirebaseDatabase */; };
+		B816C720275817EA00680174 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = B816C71F275817EA00680174 /* FirebaseRemoteConfig */; };
+		B816C722275817EA00680174 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B816C721275817EA00680174 /* FirebaseStorage */; };
 		B8190DF826FA388500E3994C /* SnippetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8190DF726FA388500E3994C /* SnippetType.swift */; };
 		B81B0877270232B600E59F86 /* NSNotification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0876270232B600E59F86 /* NSNotification+Name.swift */; };
 		B81B0879270245CE00E59F86 /* AppMenu+HideWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81B0878270245CE00E59F86 /* AppMenu+HideWindow.swift */; };
@@ -100,8 +105,6 @@
 		B8BEF5AD26FFEB600098A778 /* EmptySnippetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BEF5AC26FFEB600098A778 /* EmptySnippetsListView.swift */; };
 		B8C1F6C0270E13BA0088E5B5 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = B8C1F6BF270E13BA0088E5B5 /* Sourceful */; };
 		B8C1F6C3270E13C30088E5B5 /* SwiftUISkeleton in Frameworks */ = {isa = PBXBuildFile; productRef = B8C1F6C2270E13C30088E5B5 /* SwiftUISkeleton */; };
-		B8C1F6C6270E13E60088E5B5 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B8C1F6C5270E13E60088E5B5 /* FirebaseCrashlytics */; };
-		B8C1F6C8270E13E60088E5B5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B8C1F6C7270E13E60088E5B5 /* FirebaseDatabase */; };
 		B8C549BA26FF9C0800720E62 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549B926FF9C0800720E62 /* NetworkObserver.swift */; };
 		B8C549BC26FFA71300720E62 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549BB26FFA71300720E62 /* AppView.swift */; };
 		B8C549C426FFBA8600720E62 /* View+Skeletonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C549C326FFBA8600720E62 /* View+Skeletonable.swift */; };
@@ -305,10 +308,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C1F6C6270E13E60088E5B5 /* FirebaseCrashlytics in Frameworks */,
+				B816C71E275817EA00680174 /* FirebaseDatabase in Frameworks */,
 				B8C1F6C0270E13BA0088E5B5 /* Sourceful in Frameworks */,
 				B8FC70E327335DF80090292C /* PopupView in Frameworks */,
-				B8C1F6C8270E13E60088E5B5 /* FirebaseDatabase in Frameworks */,
+				B816C720275817EA00680174 /* FirebaseRemoteConfig in Frameworks */,
+				B816C71C275817EA00680174 /* FirebaseCrashlytics in Frameworks */,
+				B816C722275817EA00680174 /* FirebaseStorage in Frameworks */,
+				B816C71A275817EA00680174 /* FirebaseAnalytics in Frameworks */,
 				B8C1F6C3270E13C30088E5B5 /* SwiftUISkeleton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -827,9 +833,12 @@
 			packageProductDependencies = (
 				B8C1F6BF270E13BA0088E5B5 /* Sourceful */,
 				B8C1F6C2270E13C30088E5B5 /* SwiftUISkeleton */,
-				B8C1F6C5270E13E60088E5B5 /* FirebaseCrashlytics */,
-				B8C1F6C7270E13E60088E5B5 /* FirebaseDatabase */,
 				B8FC70E227335DF80090292C /* PopupView */,
+				B816C719275817EA00680174 /* FirebaseAnalytics */,
+				B816C71B275817EA00680174 /* FirebaseCrashlytics */,
+				B816C71D275817EA00680174 /* FirebaseDatabase */,
+				B816C71F275817EA00680174 /* FirebaseRemoteConfig */,
+				B816C721275817EA00680174 /* FirebaseStorage */,
 			);
 			productName = SnippetsLibrary;
 			productReference = B82561B026E81D570040A67E /* Snippets Library.app */;
@@ -908,8 +917,8 @@
 			packageReferences = (
 				B8C1F6BE270E13BA0088E5B5 /* XCRemoteSwiftPackageReference "Sourceful" */,
 				B8C1F6C1270E13C30088E5B5 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */,
-				B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B8FC70E127335DF80090292C /* XCRemoteSwiftPackageReference "PopupView" */,
+				B816C718275817EA00680174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B82561B126E81D570040A67E /* Products */;
 			projectDirPath = "";
@@ -1517,6 +1526,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B816C718275817EA00680174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B8C1F6BE270E13BA0088E5B5 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/Sourceful.git";
@@ -1533,14 +1550,6 @@
 				kind = branch;
 			};
 		};
-		B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		B8FC70E127335DF80090292C /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView.git";
@@ -1552,6 +1561,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B816C719275817EA00680174 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B816C718275817EA00680174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B816C71B275817EA00680174 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B816C718275817EA00680174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		B816C71D275817EA00680174 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B816C718275817EA00680174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		B816C71F275817EA00680174 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B816C718275817EA00680174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		B816C721275817EA00680174 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B816C718275817EA00680174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		B8C1F6BF270E13BA0088E5B5 /* Sourceful */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B8C1F6BE270E13BA0088E5B5 /* XCRemoteSwiftPackageReference "Sourceful" */;
@@ -1561,16 +1595,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B8C1F6C1270E13C30088E5B5 /* XCRemoteSwiftPackageReference "SwiftUISkeleton" */;
 			productName = SwiftUISkeleton;
-		};
-		B8C1F6C5270E13E60088E5B5 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		B8C1F6C7270E13E60088E5B5 /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8C1F6C4270E13E60088E5B5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
 		};
 		B8FC70E227335DF80090292C /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -55,7 +55,7 @@ final class SnippetsLibraryViewModel: ObservableObject {
     }
     
     internal func fetchSnippets() {
-        databaseService.fetchSnippets()
+        databaseService.snippets
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 switch completion {

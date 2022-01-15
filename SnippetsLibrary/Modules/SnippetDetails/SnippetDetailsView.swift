@@ -30,7 +30,10 @@ struct SnippetDetailsView: View {
     // MARK: - Views
     
     var body: some View {
-        VStack(alignment: .leading, spacing: .zero) {
+        VStack(
+            alignment: .leading,
+            spacing: .zero
+        ) {
             TextField(
                 "Snippet title",
                 text: $viewModel.snippet.title
@@ -38,6 +41,7 @@ struct SnippetDetailsView: View {
             .modifier(TextFieldStyleModifier(type: viewModel.type))
             .font(.system(size: 15, weight: .bold))
             .foregroundColor(Color.primary)
+            .help("Provide the title in a common format for all snippets, e.g. Basic Service.")
             
             TextField(
                 "Snippet summary",
@@ -46,6 +50,7 @@ struct SnippetDetailsView: View {
             .modifier(TextFieldStyleModifier(type: viewModel.type))
             .font(.system(size: 11, weight: .regular))
             .foregroundColor(Color.primary)
+            .help("Describe your snippet in a few words.")
             .padding(.top, Layout.smallPadding / 2)
             
             GeometryReader { geometry in
@@ -64,6 +69,7 @@ struct SnippetDetailsView: View {
                     width: geometry.frame(in: .global).width,
                     height: geometry.frame(in: .global).height
                 )
+                .help("Remember, that the provided code snippet should be ready to use.")
             }
             .padding(.horizontal, Constants.codeEditorHorizontalPadding)
             .padding(.vertical, Constants.codeEditorVerticlaPadding)
@@ -100,6 +106,7 @@ struct SnippetDetailsView: View {
                     viewModel.snippet.platform = viewModel.platforms[index]
                 }
             }
+            .help("Supported platform by code snippet.")
             
             HStack {
                 Text("Completion")
@@ -123,6 +130,7 @@ struct SnippetDetailsView: View {
                 )
                 .padding(.leading, Layout.smallPadding)
             }
+            .help("Completion should be unique to this snippet and easy to remember.")
             .padding(.top, Constants.lineTopPadding)
             
             HStack {
@@ -150,6 +158,7 @@ struct SnippetDetailsView: View {
                     viewModel.snippet.availability = viewModel.availabilities[index]
                 }
             }
+            .help("Scope for this code snippet.")
             .padding(.top, Constants.lineTopPadding)
             
             HStack {
@@ -184,6 +193,7 @@ struct SnippetDetailsView: View {
                         .padding(.leading, Layout.smallPadding)
                 }
             }
+            .help("Author of this code snippet.")
             .padding(.top, Constants.lineTopPadding)
             
             Spacer()
