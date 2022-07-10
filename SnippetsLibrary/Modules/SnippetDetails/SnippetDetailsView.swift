@@ -25,7 +25,7 @@ struct SnippetDetailsView: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment (\.presentationMode) var presentationMode
     
-    @StateObject internal var viewModel: SnippetDetailsViewModel
+    @ObservedObject var viewModel: SnippetDetailsViewModel
     
     // MARK: - Views
     

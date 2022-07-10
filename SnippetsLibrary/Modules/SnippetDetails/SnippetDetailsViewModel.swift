@@ -13,6 +13,7 @@ final class SnippetDetailsViewModel: ObservableObject {
     // MARK: - Stored Properties
     
     @Published var snippet: Snippet
+    @Published var text: String = ""
     @Binding private(set) var activeAppView: ActiveAppView?
 
     let type: SnippetDetailsViewType
@@ -56,6 +57,7 @@ final class SnippetDetailsViewModel: ObservableObject {
         self.databaseService = databaseService
         
         setup()
+        text = snippet.content
     }
     
     // MARK: - Methods
