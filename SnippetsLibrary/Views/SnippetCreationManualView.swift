@@ -37,7 +37,7 @@ struct SnippetCreationManualView: View {
             
             Text(
                 """
-                ✅ Make sure, that your snippet is helpful, complete and contains only the necessary lines required for use.
+                ✅ Make sure that your snippet is helpful, complete and contains only the necessary lines required for use.
                 
                 ✅ Enter the title, summary, supported platforms and scopes and remember, that the completion should be self-explaining.
                 """
